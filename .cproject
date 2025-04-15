@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.renesas.cdt.managedbuild.renesas.ccrh.hardwaredebug.configuration.121011068">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.renesas.cdt.managedbuild.renesas.ccrh.hardwaredebug.configuration.121011068" moduleId="org.eclipse.cdt.core.settings" name="HardwareDebug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.renesas.cdt.managedbuild.renesas.core.RenesasCompilerAssemblerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.renesas.cdt.managedbuild.core.buildRunnerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="com.renesas.cdt.managedbuild.core.toolchainInfo">
+				<option id="toolchain.id" value="Renesas_CCRH"/>
+				<option id="toolchain.version" value="v2.07.00"/>
+			</storageModule>
+			<storageModule moduleId="com.renesas.cdt.managedbuild.core.boardInfo">
+				<option id="board.id" value=""/>
+				<option id="board.name" value=""/>
+				<option id="board.device" value=""/>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="abs" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="Debug on hardware" id="com.renesas.cdt.managedbuild.renesas.ccrh.hardwaredebug.configuration.121011068" name="HardwareDebug" parent="com.renesas.cdt.managedbuild.renesas.ccrh.hardwaredebug.configuration">
+					<folderInfo id="com.renesas.cdt.managedbuild.renesas.ccrh.hardwaredebug.configuration.121011068." name="/" resourcePath="">
+						<toolChain id="com.renesas.cdt.managedbuild.renesas.ccrh.hardwaredebug.toolChain.16433707" name="Renesas CCRH Toolchain" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.hardwaredebug.toolChain">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.PE" id="com.renesas.cdt.managedbuild.renesas.ccrh.base.targetPlatform.182841744" isAbstract="false" name="targetPlatform" osList="win32" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.base.targetPlatform"/>
+							<builder buildPath="${workspace_loc:/Training_HT_Sensor}/HardwareDebug" id="com.renesas.cdt.managedbuild.renesas.ccrh.base.builder.257410675" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.base.builder"/>
+							<tool id="com.renesas.cdt.managedbuild.renesas.ccrh.base.common.841390400" name="Common" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.base.common">
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.cpu.1139844847" name="Type of CPU core (-Xcpu)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.cpu" value="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.cpu.g3kh" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.deviceName.1409002973" name="Device Name" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.deviceName" value="R7F701649" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.deviceCommand.1633999203" name="Device Command" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.deviceCommand" value="R7F701649" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.deviceFamily.135342211" name="Device Family" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.deviceFamily" value="RH850 - F1KM" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.cmd.console.637407882" name="How to output contents of subcommand file" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.cmd.console" value="com.renesas.cdt.managedbuild.renesas.ccrh.common.option.cmd.console.OFF" valueType="enumerated"/>
+							</tool>
+							<tool id="com.renesas.cdt.managedbuild.renesas.ccrh.base.compiler.709691327" name="Compiler" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.base.compiler">
+								<option defaultValue="true" id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.g.456378026" name="Output debugging information (-g)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.g" useByScannerDiscovery="false" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.I.304758080" name="Folder to search include files (-I)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.I" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/general}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/r_pincfg}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RIIC0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_UART0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RTCA0}&quot;"/>
+								</option>
+								<inputType id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.C.inputType.1601211884" name="Compiler InputType" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.C.inputType"/>
+							</tool>
+							<tool id="com.renesas.cdt.managedbuild.renesas.ccrh.exe.hardwaredebug.assembler.1224200501" name="Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.exe.hardwaredebug.assembler">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.option.I.1792123559" name="Folder to search include files (-I)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.option.I" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/general}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/r_pincfg}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RIIC0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_UART0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RTCA0}&quot;"/>
+								</option>
+								<inputType id="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.inputType.1639698406" name="Assembler InputType" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.inputType"/>
+							</tool>
+							<tool id="com.renesas.cdt.managedbuild.renesas.ccrh.base.linker.1045075121" name="Linker" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.base.linker">
+								<option defaultValue="true" id="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.debug.472905443" name="Output the debug information (-debug/-nodebug)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.debug" valueType="boolean"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.linkerSection.459766486" name="Section location (-start)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.linkerSection" value="RESET,EIINTTBL/0,EIINTTBL.const/02000,.const,.INIT_DSEC.const,.INIT_BSEC.const,.text,.data/08000,.data.R,.bss,.stack.bss/0FEDE8000" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.show.symbol.2048787188" name="Output symbol information (-show=symbol)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.show.symbol" value="true" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.linkageOrderList.213879812" name="Link order" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.linker.option.linkageOrderList" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;.\src\Training_HT_Sensor.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RH\V2.07.00\lib\v850e3v5\rhs8n.lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RH\V2.07.00\lib\v850e3v5\libmalloc.lib&quot;"/>
+								</option>
+								<inputType id="com.renesas.cdt.managedbuild.renesas.ccrh.linker.inputType.826883607" name="Linker InputType" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.linker.inputType"/>
+							</tool>
+							<tool id="com.renesas.cdt.managedbuild.renesas.ccrh.base.converter.644009795" name="Converter" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.base.converter">
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.converter.option.formStype.708144977" name="Output a Motorola S-record file (-form=stype)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.converter.option.formStype" value="true" valueType="boolean"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Training_HT_Sensor.com.renesas.cdt.managedbuild.renesas.ccrh.projectType.1415392607" name="Executable" projectType="com.renesas.cdt.managedbuild.renesas.ccrh.projectType"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="org.eclipse.cdt.core.language.mapping">
+		<project-mappings>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cHeader" language="com.renesas.cdt.managedbuild.renesas.core.extendc"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cSource" language="com.renesas.cdt.managedbuild.renesas.core.extendc"/>
+		</project-mappings>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope"/>
+</cproject>
