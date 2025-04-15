@@ -22,9 +22,8 @@ This project demonstrates how to interface an I2C-based temperature and humidity
 - Configured I2C (RIIC module) for communication with the sensor. ❌
 - Implemented basic readout of temperature and humidity values. ❌
 
-> ![Info]
->
-> Currently I don't have a HS3001 on my Desk. That's why I just implemented Dummy Values.
+> [!IMPORTANT]  
+> It was suggested not to use the HS4001 Sensor. Since it is to difficult to write a driver for it. That's the reason why I have ordered a [HS3001](US082-HS3001EVZ) Sensor Module.
 
 ### v1.2.0 – Periodic Sensor Readout
 
