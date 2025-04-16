@@ -200,7 +200,7 @@ static void State_ReadSensor(void) {
     PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
 
 
-    // Currently we are just placing dummy values
+    // Currently we are just placing dummy values -> TODO
     g_temp_measurement.temperature_celsius 	= 22.83;
     g_temp_measurement.relative_humidity	= 94.8;
 
