@@ -38,6 +38,9 @@ This project demonstrates how to interface an I2C-based temperature and humidity
 
 _Optional: You can use DMA to transfer both the data without CPU intervention (v1.4.0)_ ❌
 
+> [!INFO]  
+> DMA for RTC (RTC 1s Interrupt) is not Possible, since the interrupt source INTRTCA01S isn't an option for the DMA controller. -> Makes sense since the RTC is running in the background and you gan easily get a value by just calling the API. From my point of view, no DMA is needed.
+
 ### v2.0.0 – Low Power Mode Handling
 
 - Implemented STOP Mode for low power consumption. ❌
