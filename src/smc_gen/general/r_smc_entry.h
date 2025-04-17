@@ -36,6 +36,8 @@ Includes
 #include "Config_TAUB0_1.h"
 #include "Config_UART0.h"
 #include "Config_RTCA0.h"
+#include "Config_DMAC00.h"
+#include "r_cg_dma_common.h"
 #include "r_cg_cgc.h"
 
 #ifndef SMC_ENTRY_H

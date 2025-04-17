@@ -157,7 +157,7 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
 static void State_Init(void) {
     // Initialization logic (hardware init, boot checks, etc.)
 	R_Systeminit();
-	EI();
+
 
     // Start I2C Peripheral
     //R_Config_RIIC0_Start();
@@ -180,6 +180,15 @@ static void State_Init(void) {
 
     R_Config_RTCA0_Set_CounterValue(g_rtc_value);
 
+
+    // Init DMA -> TODO
+
+
+
+    R_Config_DMAC00_Start();
+
+    // Enable all Interrupts
+    EI();
     // When init is successful -> Raise an event
     g_event = EVT_SYSTEM_READY;
 }

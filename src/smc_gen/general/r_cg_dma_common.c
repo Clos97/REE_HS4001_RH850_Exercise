@@ -18,10 +18,10 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name        : r_cg_systeminit.c
+* File Name        : r_cg_dma_common.c
 * Version          : 1.0.140
 * Device(s)        : R7F701649
-* Description      : This file implements system initializing function.
+* Description      : None
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
 Pragma directive
@@ -34,14 +34,8 @@ Includes
 ***********************************************************************************************************************/
 #include "r_cg_macrodriver.h"
 #include "r_cg_userdefine.h"
-#include "Config_RIIC0.h"
-#include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
-#include "Config_TAUB0_1.h"
-#include "Config_UART0.h"
-#include "Config_RTCA0.h"
-#include "Config_DMAC00.h"
-#include "r_cg_cgc.h"
+#include "r_cg_dma_common.h"
+#include "r_cg_dma.h"
 /* Start user code for include. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
@@ -52,20 +46,28 @@ Global variables and functions
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_Systeminit
-* Description  : This function initializes every macro
+* Function Name: R_PDMA0_Suspend
+* Description  : This function suspends PDMA0 channel operation.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-void R_Systeminit(void)
+void R_PDMA0_Suspend(void)
 {
-    /* Set peripheral settings */
-    R_Config_PORT_Create();
-    R_CGC_Create();
-    R_Config_RIIC0_Create();
-    R_Config_TAUB0_0_Create();
-    R_Config_TAUB0_1_Create();
-    R_Config_UART0_Create();
-    R_Config_RTCA0_Create();
-    R_Config_DMAC00_Create();
+    /* Set the PDMA0DMACTL */
+    PDMA0.DMACTL = _DMAC_SUSPEND_REQUEST;
 }
+
+/***********************************************************************************************************************
+* Function Name: R_PDMA0_Resume
+* Description  : This function resumes PDMA0 channel operation.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+void R_PDMA0_Resume(void)
+{
+    /* Clear the PDMA0DMACTL */
+    PDMA0.DMACTL = _DMAC_SUSPEND_CLEARED;
+}
+
+/* Start user code for adding. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */

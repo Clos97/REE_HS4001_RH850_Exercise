@@ -18,54 +18,32 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name        : r_cg_systeminit.c
+* File Name        : r_cg_dma_common.h
 * Version          : 1.0.140
 * Device(s)        : R7F701649
-* Description      : This file implements system initializing function.
+* Description      : Common header file for DMAC peripheral.
 ***********************************************************************************************************************/
-/***********************************************************************************************************************
-Pragma directive
-***********************************************************************************************************************/
-/* Start user code for pragma. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
+
+#ifndef DMAC_COMMON_H
+#define DMAC_COMMON_H
 
 /***********************************************************************************************************************
-Includes
+Macro definitions (Register bit)
 ***********************************************************************************************************************/
-#include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
-#include "Config_RIIC0.h"
-#include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
-#include "Config_TAUB0_1.h"
-#include "Config_UART0.h"
-#include "Config_RTCA0.h"
-#include "Config_DMAC00.h"
-#include "r_cg_cgc.h"
-/* Start user code for include. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-Global variables and functions
+Macro definitions
 ***********************************************************************************************************************/
-/* Start user code for global. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_Systeminit
-* Description  : This function initializes every macro
-* Arguments    : None
-* Return Value : None
+Typedef definitions
 ***********************************************************************************************************************/
-void R_Systeminit(void)
-{
-    /* Set peripheral settings */
-    R_Config_PORT_Create();
-    R_CGC_Create();
-    R_Config_RIIC0_Create();
-    R_Config_TAUB0_0_Create();
-    R_Config_TAUB0_1_Create();
-    R_Config_UART0_Create();
-    R_Config_RTCA0_Create();
-    R_Config_DMAC00_Create();
-}
+
+/***********************************************************************************************************************
+Global functions
+***********************************************************************************************************************/
+void R_PDMA0_Suspend(void);
+void R_PDMA0_Resume(void);
+/* Start user code for function. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
+#endif

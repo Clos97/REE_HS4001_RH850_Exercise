@@ -335,7 +335,7 @@
         <Item generateEntity="true" generateFunction="false" id="CSIG0_INTCSIG0IRE" interruptHandlerFlag="false" interruptHandlerName="eiint57" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN240_INTRLIN20" interruptHandlerFlag="false" interruptHandlerName="eiint58" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN240_INTRLIN21" interruptHandlerFlag="false" interruptHandlerName="eiint59" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA0" interruptHandlerFlag="false" interruptHandlerName="eiint60" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA0" interruptHandlerFlag="true" interruptHandlerName="r_Config_DMAC00_dmac00_interrupt" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA1" interruptHandlerFlag="false" interruptHandlerName="eiint61" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA2" interruptHandlerFlag="false" interruptHandlerName="eiint62" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA3" interruptHandlerFlag="false" interruptHandlerName="eiint63" oSManagementInterrupt="false" priority="15"/>
@@ -1670,6 +1670,290 @@
             </allocatable>
             <component description="The Real-Time Clock (RTC) is function that provides information about the present time and date and can generate wake-up signals (interrupts, alarms)." detailDescription="" display="Real-Time Clock" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.rtc" version="1.5.0"/>
             <allocator channelLevel0="0" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Real-Time Clock 0" display="RTCA0" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850f1kms1s4.rtc0" type="">
+                <context/>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+        <configuration apiMode="FULL_API" id="8b965888-66d6-4df5-91fc-2e9af565f60a" inuse="true" name="Config_DMAC00">
+            <allocatable id="DMAC0_Header0">
+                <allocatable id="DMAC channel0">
+                    <option enabled="true" id="chainModeSelection" selection="disabled">
+                        <item id="chainAtTheLastTransfer" input="" vlaue="0"/>
+                        <item id="alwaysChain" input="" vlaue="0"/>
+                        <item id="disabled" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="nextChainChanSelection" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="triggerSourceSelection" selection="softwareTrigger">
+                        <item id="softwareTrigger" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL0" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL1" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL2" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL3" input="" vlaue="0"/>
+                        <item id="INTADCA0I0" input="" vlaue="0"/>
+                        <item id="INTADCA0I1" input="" vlaue="0"/>
+                        <item id="INTADCA0I2" input="" vlaue="0"/>
+                        <item id="ADC_CONV_END0" input="" vlaue="0"/>
+                        <item id="INTCSIG0IC" input="" vlaue="0"/>
+                        <item id="INTCSIG0IR" input="" vlaue="0"/>
+                        <item id="INTRLIN30UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN30UR1" input="" vlaue="0"/>
+                        <item id="INTP0" input="" vlaue="0"/>
+                        <item id="INTP2" input="" vlaue="0"/>
+                        <item id="INTP4" input="" vlaue="0"/>
+                        <item id="INTRLIN37UR0" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL4" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL5" input="" vlaue="0"/>
+                        <item id="INTRIIC0TI" input="" vlaue="0"/>
+                        <item id="INTRIIC0RI" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I3" input="" vlaue="0"/>
+                        <item id="RSCANFDCF0" input="" vlaue="0"/>
+                        <item id="RSCANFDCF1" input="" vlaue="0"/>
+                        <item id="RSCANFDCF2" input="" vlaue="0"/>
+                        <item id="RSCANFDCF3" input="" vlaue="0"/>
+                        <item id="INTCSIH1IC" input="" vlaue="0"/>
+                        <item id="INTCSIH1IR" input="" vlaue="0"/>
+                        <item id="INTCSIH1IJC" input="" vlaue="0"/>
+                        <item id="INTP6" input="" vlaue="0"/>
+                        <item id="INTP8" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL0" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL1" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL2" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL3" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL4" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL5" input="" vlaue="0"/>
+                        <item id="INTCSIH3IC" input="" vlaue="0"/>
+                        <item id="INTCSIH3IR" input="" vlaue="0"/>
+                        <item id="INTCSIH3IJC" input="" vlaue="0"/>
+                        <item id="INTRLIN32UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN32UR1" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I2" input="" vlaue="0"/>
+                        <item id="RSCANFDCF4" input="" vlaue="0"/>
+                        <item id="RSCANFDCF5" input="" vlaue="0"/>
+                        <item id="INTRLIN34UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN34UR1" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL0" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL1" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL2" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL3" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL4" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL5" input="" vlaue="0"/>
+                        <item id="RSCANFDRF0" input="" vlaue="0"/>
+                        <item id="RSCANFDRF1" input="" vlaue="0"/>
+                        <item id="RSCANFDRF2" input="" vlaue="0"/>
+                        <item id="RSCANFDRF3" input="" vlaue="0"/>
+                        <item id="RSCANFDCF6" input="" vlaue="0"/>
+                        <item id="RSCANFDCF7" input="" vlaue="0"/>
+                        <item id="INTCSIG1IC" input="" vlaue="0"/>
+                        <item id="INTCSIG1IR" input="" vlaue="0"/>
+                        <item id="RSCANFDRF4" input="" vlaue="0"/>
+                        <item id="RSCANFDRF5" input="" vlaue="0"/>
+                        <item id="INTCSIH0IC" input="" vlaue="0"/>
+                        <item id="INTCSIH0IR" input="" vlaue="0"/>
+                        <item id="INTCSIH0IJC" input="" vlaue="0"/>
+                        <item id="INTP1" input="" vlaue="0"/>
+                        <item id="INTP3" input="" vlaue="0"/>
+                        <item id="INTP5" input="" vlaue="0"/>
+                        <item id="INTRLIN37UR1" input="" vlaue="0"/>
+                        <item id="INTCSIG2IC" input="" vlaue="0"/>
+                        <item id="INTCSIG2IR" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I2" input="" vlaue="0"/>
+                        <item id="RSCANFDRF6" input="" vlaue="0"/>
+                        <item id="RSCANFDRF7" input="" vlaue="0"/>
+                        <item id="INTDMAFL" input="" vlaue="0"/>
+                        <item id="INTRLIN31UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN31UR1" input="" vlaue="0"/>
+                        <item id="INTP7" input="" vlaue="0"/>
+                        <item id="INTCSIH2IC" input="" vlaue="0"/>
+                        <item id="INTCSIH2IR" input="" vlaue="0"/>
+                        <item id="INTCSIH2IJC" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I3" input="" vlaue="0"/>
+                        <item id="INTP9" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I2" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I3" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I2" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I3" input="" vlaue="0"/>
+                        <item id="INTRLIN33UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN33UR1" input="" vlaue="0"/>
+                        <item id="INTRIIC1TI" input="" vlaue="0"/>
+                        <item id="INTRIIC1RI" input="" vlaue="0"/>
+                        <item id="INTADCA1I0" input="" vlaue="0"/>
+                        <item id="INTADCA1I1" input="" vlaue="0"/>
+                        <item id="INTADCA1I2" input="" vlaue="0"/>
+                        <item id="ADC_CONV_END1" input="" vlaue="0"/>
+                        <item id="INTRLIN36UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN36UR1" input="" vlaue="0"/>
+                        <item id="INTRLIN35UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN35UR1" input="" vlaue="0"/>
+                        <item id="INTSENT0RI" input="" vlaue="0"/>
+                        <item id="INTSENT1RI" input="" vlaue="0"/>
+                        <item id="INTCSIG3IC" input="" vlaue="0"/>
+                        <item id="INTCSIG3IR" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="validTriggerSelection" selection="INTTAUB0I0">
+                        <item id="INTTAUD0I0" input="" vlaue="0"/>
+                        <item id="INTTAUD0I1" input="" vlaue="0"/>
+                        <item id="INTTAUD0I2" input="" vlaue="0"/>
+                        <item id="INTTAUD0I3" input="" vlaue="0"/>
+                        <item id="INTTAUD0I4" input="" vlaue="0"/>
+                        <item id="INTTAUD0I5" input="" vlaue="0"/>
+                        <item id="INTTAUD0I6" input="" vlaue="0"/>
+                        <item id="INTTAUD0I7" input="" vlaue="0"/>
+                        <item id="INTTAUD0I8" input="" vlaue="0"/>
+                        <item id="INTTAUD0I9" input="" vlaue="0"/>
+                        <item id="INTTAUD0I10" input="" vlaue="0"/>
+                        <item id="INTTAUD0I11" input="" vlaue="0"/>
+                        <item id="INTTAUD0I12" input="" vlaue="0"/>
+                        <item id="INTTAUD0I13" input="" vlaue="0"/>
+                        <item id="INTTAUD0I14" input="" vlaue="0"/>
+                        <item id="INTTAUD0I15" input="" vlaue="0"/>
+                        <item id="INTTAUB0I0" input="" vlaue="0"/>
+                        <item id="INTTAUB0I1" input="" vlaue="0"/>
+                        <item id="INTTAUB0I2" input="" vlaue="0"/>
+                        <item id="INTTAUB0I3" input="" vlaue="0"/>
+                        <item id="INTTAUB0I4" input="" vlaue="0"/>
+                        <item id="INTTAUB0I5" input="" vlaue="0"/>
+                        <item id="INTTAUB0I6" input="" vlaue="0"/>
+                        <item id="INTTAUB0I7" input="" vlaue="0"/>
+                        <item id="INTTAUB0I8" input="" vlaue="0"/>
+                        <item id="INTTAUB0I9" input="" vlaue="0"/>
+                        <item id="INTTAUB0I10" input="" vlaue="0"/>
+                        <item id="INTTAUB0I11" input="" vlaue="0"/>
+                        <item id="INTTAUB0I12" input="" vlaue="0"/>
+                        <item id="INTTAUB0I13" input="" vlaue="0"/>
+                        <item id="INTTAUB0I14" input="" vlaue="0"/>
+                        <item id="INTTAUB0I15" input="" vlaue="0"/>
+                        <item id="INTTAUB1I0" input="" vlaue="0"/>
+                        <item id="INTTAUB1I1" input="" vlaue="0"/>
+                        <item id="INTTAUB1I2" input="" vlaue="0"/>
+                        <item id="INTTAUB1I3" input="" vlaue="0"/>
+                        <item id="INTTAUB1I4" input="" vlaue="0"/>
+                        <item id="INTTAUB1I5" input="" vlaue="0"/>
+                        <item id="INTTAUB1I6" input="" vlaue="0"/>
+                        <item id="INTTAUB1I7" input="" vlaue="0"/>
+                        <item id="INTTAUB1I8" input="" vlaue="0"/>
+                        <item id="INTTAUB1I9" input="" vlaue="0"/>
+                        <item id="INTTAUB1I10" input="" vlaue="0"/>
+                        <item id="INTTAUB1I11" input="" vlaue="0"/>
+                        <item id="INTTAUB1I12" input="" vlaue="0"/>
+                        <item id="INTTAUB1I13" input="" vlaue="0"/>
+                        <item id="INTTAUB1I14" input="" vlaue="0"/>
+                        <item id="INTTAUB1I15" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="transferModeSelection" selection="singleTransfer">
+                        <item id="singleTransfer" input="" vlaue="0"/>
+                        <item id="blockTransfer1" input="" vlaue="0"/>
+                        <item id="blockTransfer2" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="continuousTransferEnable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="dmaCyclesEnable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="sourceAddress" selection="sourceAddressTxt">
+                        <item id="sourceAddressTxt" input="0x00000123" vlaue="291"/>
+                    </option>
+                    <option enabled="true" id="sourceCountDirection" selection="fixed">
+                        <item id="increment" input="" vlaue="0"/>
+                        <item id="decrement" input="" vlaue="0"/>
+                        <item id="fixed" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="destinationAddress" selection="destinationAddressTxt">
+                        <item id="destinationAddressTxt" input="0x00000456" vlaue="1110"/>
+                    </option>
+                    <option enabled="true" id="destinationCountDirection" selection="fixed">
+                        <item id="increment" input="" vlaue="0"/>
+                        <item id="decrement" input="" vlaue="0"/>
+                        <item id="fixed" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="transferCount" selection="transferCountTxt">
+                        <item id="transferCountTxt" input="1" vlaue="1"/>
+                    </option>
+                    <option enabled="true" id="dataSize" selection="8bit">
+                        <item id="8bit" input="" vlaue="0"/>
+                        <item id="16bit" input="" vlaue="0"/>
+                        <item id="32bit" input="" vlaue="0"/>
+                        <item id="64bit" input="" vlaue="0"/>
+                        <item id="128bit" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="addressReloadCount" selection="addressReloadCountTxt">
+                        <item id="addressReloadCountTxt" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="reloadFun1Enable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadfun1Selection" selection="desAddTransferCountReloaded">
+                        <item id="sourAddTransferCountReloaded" input="" vlaue="0"/>
+                        <item id="desAddTransferCountReloaded" input="" vlaue="0"/>
+                        <item id="sourAddDesAddTransferCountReloaded" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="reloadFun2Enable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadfun2Selection" selection="sourAddAddReloadCountReloaded">
+                        <item id="sourAddAddReloadCountReloaded" input="" vlaue="0"/>
+                        <item id="desAddAddReloadCountReloaded" input="" vlaue="0"/>
+                        <item id="sourAddDesAddAddReloadCountReloaded" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadSourAdd" selection="reloadSourAddTxt">
+                        <item id="reloadSourAddTxt" input="0x00000000" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadDesAdd" selection="reloadDesAddTxt">
+                        <item id="reloadDesAddTxt" input="0x00000000" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadTransferCount" selection="reloadTransferCountTxt">
+                        <item id="reloadTransferCountTxt" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadAddReloadCount" selection="reloadAddReloadCountTxt">
+                        <item id="reloadAddReloadCountTxt" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="transferCompleteIntEnable" selection="checked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="intPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+            </allocatable>
+            <component description="The Direct Memory Access (DMA) is function that access data without intervention of the CPU." detailDescription="" display="DMA Controller" id="com.renesas.smc.tools.swcomponent.rh850.dma" version="1.6.0"/>
+            <allocator channelLevel0="0" channelLevel1="0" channelLevel2="" channelLevel3="0" channelLevel4="" channelLevel5="" description="This software allocator provides the function of DMA controller in DMAC00." display="DMAC00" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.dmac.f1kms1s4.dmac00" type="DMAC0">
                 <context/>
             </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>

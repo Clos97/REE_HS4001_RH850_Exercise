@@ -7,9 +7,10 @@
 
 #include "UART_Functions.h"
 
+
+
 void uart_send_state_transition(State_t old_state, State_t new_state)
 {
-	char tx_buf1[UART_BUFFER_SIZE];
 	const char* char_state_old;
 	const char* char_state_new;
 	volatile MD_STATUS err = MD_OK;
@@ -45,12 +46,12 @@ void uart_send_state_transition(State_t old_state, State_t new_state)
 
 
 	// char_state in den Buffer einfügen
-	length = sprintf(tx_buf1, "Transition from %s to %s \r\n", char_state_old, char_state_new);
+	length = sprintf(g_tx_buf1, "Transition from %s to %s \r\n", char_state_old, char_state_new);
 
 	uart_isr_status_flag_send_complete = 0;
 
 	// Only sent the real length
-	err = R_Config_UART0_Send(tx_buf1, length);
+	err = R_Config_UART0_Send(g_tx_buf1, length);
 
 	if(err != MD_OK)
 	{
@@ -66,19 +67,19 @@ void uart_send_state_transition(State_t old_state, State_t new_state)
 
 void uart_send_log_humidity_and_temperature(TemperatureMeasurement measurement)
 {
-	char tx_buf1[UART_BUFFER_SIZE];
+
 	volatile MD_STATUS err = MD_OK;
 	uint16_t length = 0;
 
 	// char_state in den Buffer einfügen
-	length = sprintf(tx_buf1,
+	length = sprintf(g_tx_buf1,
 	    "+-------------------------------+\r\n"
 	    "| %s | %5.2f C | %5.2f %%  |\r\n"
 	    "+-------------------------------+\r\n",
 	    measurement.timestamp, measurement.temperature_celsius, measurement.relative_humidity);
 
 	// Only sent the real length
-	err = R_Config_UART0_Send(tx_buf1, length);
+	err = R_Config_UART0_Send(g_tx_buf1, length);
 
 	if(err != MD_OK)
 	{

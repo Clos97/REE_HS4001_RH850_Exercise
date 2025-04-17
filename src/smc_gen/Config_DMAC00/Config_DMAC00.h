@@ -18,54 +18,45 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name        : r_cg_systeminit.c
-* Version          : 1.0.140
+* File Name        : Config_DMAC00.h
+* Component Version: 1.6.0
 * Device(s)        : R7F701649
-* Description      : This file implements system initializing function.
+* Description      : This file implements device driver for Config_DMAC00.
 ***********************************************************************************************************************/
-/***********************************************************************************************************************
-Pragma directive
-***********************************************************************************************************************/
-/* Start user code for pragma. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
 Includes
 ***********************************************************************************************************************/
-#include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
-#include "Config_RIIC0.h"
-#include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
-#include "Config_TAUB0_1.h"
-#include "Config_UART0.h"
-#include "Config_RTCA0.h"
-#include "Config_DMAC00.h"
-#include "r_cg_cgc.h"
-/* Start user code for include. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
+#include "r_cg_dma.h"
+
+#ifndef CFG_Config_DMAC00_H
+#define CFG_Config_DMAC00_H
 
 /***********************************************************************************************************************
-Global variables and functions
+Macro definitions (Register bit)
 ***********************************************************************************************************************/
-/* Start user code for global. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_Systeminit
-* Description  : This function initializes every macro
-* Arguments    : None
-* Return Value : None
+Macro definitions
 ***********************************************************************************************************************/
-void R_Systeminit(void)
-{
-    /* Set peripheral settings */
-    R_Config_PORT_Create();
-    R_CGC_Create();
-    R_Config_RIIC0_Create();
-    R_Config_TAUB0_0_Create();
-    R_Config_TAUB0_1_Create();
-    R_Config_UART0_Create();
-    R_Config_RTCA0_Create();
-    R_Config_DMAC00_Create();
-}
+#define _DMAC00_SOURCE_ADDRESS                (0x00000123UL)
+#define _DMAC00_DESTINATION_ADDRESS           (0x00000456UL)
+#define _DMAC00_TRANSFER_COUNT                (0x00000001UL)
+
+/***********************************************************************************************************************
+Typedef definitions
+***********************************************************************************************************************/
+
+/***********************************************************************************************************************
+Global functions
+***********************************************************************************************************************/
+void R_Config_DMAC00_Create(void);
+void R_Config_DMAC00_Start(void);
+void R_Config_DMAC00_Stop(void);
+void R_Config_DMAC00_Set_SoftwareTrigger(void);
+void R_Config_DMAC00_Suspend(void);
+void R_Config_DMAC00_Resume(void);
+void R_Config_DMAC00_Create_UserInit(void);
+/* Start user code for function. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
+#endif
