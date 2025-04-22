@@ -18,10 +18,10 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name        : r_cg_systeminit.c
-* Version          : 1.0.140
+* File Name        : Config_STBC.c
+* Component Version: 1.3.1
 * Device(s)        : R7F701649
-* Description      : This file implements system initializing function.
+* Description      : This file implements device driver for Config_STBC.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
 Pragma directive
@@ -34,15 +34,7 @@ Includes
 ***********************************************************************************************************************/
 #include "r_cg_macrodriver.h"
 #include "r_cg_userdefine.h"
-#include "Config_RIIC0.h"
-#include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
-#include "Config_TAUB0_1.h"
-#include "Config_UART0.h"
-#include "Config_RTCA0.h"
-#include "Config_INTC.h"
 #include "Config_STBC.h"
-#include "r_cg_cgc.h"
 /* Start user code for include. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
@@ -53,20 +45,51 @@ Global variables and functions
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_Systeminit
-* Description  : This function initializes every macro
+* Function Name: R_Config_STBC_Prepare_Stop_Mode
+* Description  : This function prepares STBC stop mode.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-void R_Systeminit(void)
+void R_Config_STBC_Prepare_Stop_Mode(void)
 {
-    /* Set peripheral settings */
-    R_Config_PORT_Create();
-    R_CGC_Create();
-    R_Config_RIIC0_Create();
-    R_Config_TAUB0_0_Create();
-    R_Config_TAUB0_1_Create();
-    R_Config_UART0_Create();
-    R_Config_RTCA0_Create();
-    R_Config_INTC_Create();
+    /* Stop all of the peripheral functions to which the clock supply is to be stopped */
+    R_Config_STBC_Prepare_Stop_Mode_Set_Peripheral();
+    /* Disable interrupts */
+    DI();
+    /* Clear all interrupt flags */
+    R_Config_STBC_Prepare_Stop_Mode_Set_Interrupt();
+    /* Clear wake-up factor */
+    STBC_WUF0.WUFC0 = _STBC_WUFC0_CLEAR;
+    STBC_WUF1.WUFC1 = _STBC_WUFC1_CLEAR;
+    STBC_WUFISO.WUFC_ISO0 = _STBC_WUFC_ISO0_CLEAR;
+    /* Enable wake-up factor */
+    STBC_WUF0.WUFMSK0 = _STBC_FACTOR_DEFAULT_VALUE & _STBC_WUFMSK0_FACTOR_INTP12 & _STBC_WUFMSK0_FACTOR_INTRTCA0AL;
+    STBC_WUF1.WUFMSK1 = _STBC_FACTOR_DEFAULT_VALUE;
+    STBC_WUFISO.WUFMSK_ISO0 = _STBC_FACTOR_DEFAULT_VALUE;
+
+    /* Set the masks for the clock domains */
+    R_Config_STBC_Prepare_Stop_Mode_Set_Clock_Mask();
+    /* Set the masks for the source clocks */
+    R_Config_STBC_Prepare_Stop_Mode_Set_Clock_Source();
 }
+
+/***********************************************************************************************************************
+* Function Name: R_Config_STBC_Start_Stop_Mode
+* Description  : This function starts Stop Mode.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+void R_Config_STBC_Start_Stop_Mode(void)
+{
+    WPROTR.PROTCMD0 = _WRITE_PROTECT_COMMAND;
+    STBC0.STPT = _STBC_STOP_MODE_ENTERED;
+    STBC0.STPT = (uint32_t) ~_STBC_STOP_MODE_ENTERED;
+    STBC0.STPT = _STBC_STOP_MODE_ENTERED;
+    while (STBC0.STPT == _STBC_STOP_MODE_ENTERED)
+    {
+        NOP();
+    }
+}
+
+/* Start user code for adding. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */

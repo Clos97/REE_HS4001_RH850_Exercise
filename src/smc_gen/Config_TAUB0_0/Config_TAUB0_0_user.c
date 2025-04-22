@@ -35,6 +35,7 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_userdefine.h"
 #include "Config_TAUB0_0.h"
+#include "Config_PORT.h"
 /* Start user code for include. Do not edit comment generated here */
 #include "state_machine.h"
 /* End user code. Do not edit comment generated here */
@@ -73,6 +74,7 @@ void r_Config_TAUB0_0_interrupt(void)
 	if(g_StateMachine.currentState == STATE_IDLE && g_event == EVT_NONE)
 	{
 		g_event = EVT_TIMER_ELAPSED;
+		PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
 	}
 	/* End user code. Do not edit comment generated here */
 }

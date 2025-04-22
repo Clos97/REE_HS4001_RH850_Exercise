@@ -52,6 +52,8 @@ Macro definitions
 #define _RTC_COUNTER_WEEK                      (0x02U)
 #define _RTC_COUNTER_MONTH                     (0x04U)
 #define _RTC_COUNTER_YEAR                      (0x25U)
+#define _RTC_ALARM_MIN                         (0x18U)
+#define _RTC_ALARM_HOUR                        (0x13U)
 #define _RTC_SUB_COUNTER_COMPARE_VALUE         (0x0001D4BFUL)
 
 /***********************************************************************************************************************
@@ -117,5 +119,10 @@ void R_Config_RTCA0_Set_RTCA1HZOn(void);
 void R_Config_RTCA0_Set_RTCA1HZOff(void);
 void R_Config_RTCA0_Create_UserInit(void);
 /* Start user code for function. Do not edit comment generated here */
+/** Since the time format is sometimes not right ( RTC uses bin values where the Alarm uses BCD values)
+ *  BIN: 13 für 13:00 uhr
+ *  BCD: 0x13 für 13:00 Uhr */
+uint8_t bin_to_bcd(uint8_t val);
+uint8_t bcd_to_bin(uint8_t val);
 /* End user code. Do not edit comment generated here */
 #endif

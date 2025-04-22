@@ -37,6 +37,7 @@ Includes
 #include "Config_UART0.h"
 #include "Config_RTCA0.h"
 #include "Config_INTC.h"
+#include "Config_STBC.h"
 #include "r_cg_cgc.h"
 
 #ifndef SMC_ENTRY_H

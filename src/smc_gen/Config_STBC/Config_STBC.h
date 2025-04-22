@@ -18,55 +18,44 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name        : r_cg_systeminit.c
-* Version          : 1.0.140
+* File Name        : Config_STBC.h
+* Component Version: 1.3.1
 * Device(s)        : R7F701649
-* Description      : This file implements system initializing function.
+* Description      : This file implements device driver for Config_STBC.
 ***********************************************************************************************************************/
-/***********************************************************************************************************************
-Pragma directive
-***********************************************************************************************************************/
-/* Start user code for pragma. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
 Includes
 ***********************************************************************************************************************/
-#include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
-#include "Config_RIIC0.h"
-#include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
-#include "Config_TAUB0_1.h"
-#include "Config_UART0.h"
-#include "Config_RTCA0.h"
-#include "Config_INTC.h"
-#include "Config_STBC.h"
-#include "r_cg_cgc.h"
-/* Start user code for include. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
+#include "r_cg_stbc.h"
+
+#ifndef CFG_Config_STBC_H
+#define CFG_Config_STBC_H
 
 /***********************************************************************************************************************
-Global variables and functions
+Macro definitions (Register bit)
 ***********************************************************************************************************************/
-/* Start user code for global. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_Systeminit
-* Description  : This function initializes every macro
-* Arguments    : None
-* Return Value : None
+Macro definitions
 ***********************************************************************************************************************/
-void R_Systeminit(void)
-{
-    /* Set peripheral settings */
-    R_Config_PORT_Create();
-    R_CGC_Create();
-    R_Config_RIIC0_Create();
-    R_Config_TAUB0_0_Create();
-    R_Config_TAUB0_1_Create();
-    R_Config_UART0_Create();
-    R_Config_RTCA0_Create();
-    R_Config_INTC_Create();
-}
+/* Cycle time */
+#define _STBC_WAITTIME                                          (0x5U)
+#define _STBC_FACTOR_DEFAULT_VALUE                              (0xFFFFFFFFUL)
+
+/***********************************************************************************************************************
+Typedef definitions
+***********************************************************************************************************************/
+
+/***********************************************************************************************************************
+Global functions
+***********************************************************************************************************************/
+void R_Config_STBC_Prepare_Stop_Mode(void);
+void R_Config_STBC_Start_Stop_Mode(void);
+void R_Config_STBC_Prepare_Stop_Mode_Set_Peripheral(void);
+void R_Config_STBC_Prepare_Stop_Mode_Set_Interrupt(void);
+void R_Config_STBC_Prepare_Stop_Mode_Set_Clock_Mask(void);
+void R_Config_STBC_Prepare_Stop_Mode_Set_Clock_Source(void);
+/* Start user code for function. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
+#endif

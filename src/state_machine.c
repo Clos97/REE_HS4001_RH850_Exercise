@@ -23,6 +23,7 @@ static void State_Error(void);
 extern Event_t g_event;
 extern TemperatureMeasurement g_temp_measurement;
 extern rtc_counter_value_t g_rtc_value;
+rtc_alarm_value_t g_alarmValue = 0;
 // ===============================
 // Internal: Function Table for State Execution
 // ===============================
@@ -151,7 +152,12 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
         case STATE_SLEEP:
         	if(event == EVT_BUTTON_PRESS)
 			{
-				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				uart_send_state_transition(sm->currentState, STATE_WAKEUP);
+				sm->currentState = STATE_WAKEUP;
+			}
+        	if(event == EVT_RTC_ALARM)
+			{
+				uart_send_state_transition(sm->currentState, STATE_WAKEUP);
 				sm->currentState = STATE_WAKEUP;
 			}
 
@@ -201,13 +207,15 @@ static void State_Init(void) {
     g_rtc_value.month 	= 	4;
     g_rtc_value.year 	=	2025;
     g_rtc_value.hour	=	13;
-    g_rtc_value.min		=	35;
+    g_rtc_value.min		=	17;
     g_rtc_value.sec		=	0;
 
     R_Config_RTCA0_Set_CounterValue(g_rtc_value);
-
     // Internal Interrupt INT12
     R_Config_INTC_INTP12_Start();
+
+    // Prepare the Stop mode -> Stand by Controller
+    R_Config_STBC_Prepare_Stop_Mode(); // This is not working
 
     EI();
 
@@ -228,7 +236,7 @@ static void State_Idle(void) {
 static void State_ReadSensor(void) {
 
     // Toggle the LED
-    PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
+    //PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
 
 
     // Currently we are just placing dummy values -> TODO
@@ -259,13 +267,37 @@ static void State_UartLog(void) {
 static void State_Sleep(void) {
 
 		// Stop the interval Timer
-		R_Config_TAUB0_0_Stop();
+		//R_Config_TAUB0_0_Stop(); -> Should be turned off anyways
 
 		// Turn the LED OFF -> save more power
 		PORT.P8 = _PORT_Pn5_OUTPUT_LOW;
 
-		// Enter LPM -> TODO
-		__halt(); // intrinsic function for HALT Mode
+		// Define RTC Alarm Time in 1 minute
+
+		// get timestamp
+		R_Config_RTCA0_Get_CounterBufferValue(&g_rtc_value);
+		R_Config_RTCA0_Get_AlarmValue(&g_alarmValue);
+
+		// Add 1m to the Value
+		if(g_rtc_value.min == 0x59)
+		{
+			g_alarmValue.alarmwh = bin_to_bcd(g_rtc_value.hour + 1);
+			g_alarmValue.alarmwm = 0x00;
+		}
+		else
+		{
+			g_alarmValue.alarmwh = bin_to_bcd(g_rtc_value.hour);
+			g_alarmValue.alarmwm = bin_to_bcd(g_rtc_value.min + 0x01);
+		}
+
+		g_alarmValue.alarmww = 0x00; // No Weekday specified
+		// Set the new alarm Value
+		R_Config_RTCA0_Set_AlarmValue(g_alarmValue);
+
+		R_Config_RTCA0_Set_AlarmOn();
+
+		// Enter LPM
+		R_Config_STBC_Start_Stop_Mode();
 
 }
 
@@ -273,9 +305,10 @@ static void State_Sleep(void) {
  * @brief Logic for the WAKEUP state.
  */
 static void State_WakeUp(void) {
-
+	// Turn RTC Alarm Off
+	R_Config_RTCA0_Set_AlarmOff();
     // Start the Interval Timer again
-	R_Config_TAUB0_0_Start();
+	//R_Config_TAUB0_0_Start();
 
 	g_event = EVT_SYSTEM_READY;
 }
