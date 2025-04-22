@@ -265,7 +265,7 @@ static void State_Sleep(void) {
 		PORT.P8 = _PORT_Pn5_OUTPUT_LOW;
 
 		// Enter LPM -> TODO
-
+		__halt(); // intrinsic function for HALT Mode
 
 }
 
