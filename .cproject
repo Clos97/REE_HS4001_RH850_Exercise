@@ -15,6 +15,7 @@
 			<storageModule moduleId="com.renesas.cdt.managedbuild.core.toolchainInfo">
 				<option id="toolchain.id" value="Renesas_CCRH"/>
 				<option id="toolchain.version" value="v2.07.00"/>
+				<option id="toolchain.enable" value="true"/>
 			</storageModule>
 			<storageModule moduleId="com.renesas.cdt.managedbuild.core.boardInfo">
 				<option id="board.id" value=""/>
@@ -47,7 +48,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_UART0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RTCA0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_INTC}&quot;"/>
 								</option>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization.1596037338" name="Level of optimization (-O)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization" value="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization.Onothing" valueType="enumerated"/>
 								<inputType id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.C.inputType.1601211884" name="Compiler InputType" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.C.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrh.exe.hardwaredebug.assembler.1224200501" name="Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.exe.hardwaredebug.assembler">
@@ -62,6 +65,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_UART0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RTCA0}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_INTC}&quot;"/>
 								</option>
 								<inputType id="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.inputType.1639698406" name="Assembler InputType" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.inputType"/>
 							</tool>

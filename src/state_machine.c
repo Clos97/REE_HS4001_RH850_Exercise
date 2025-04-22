@@ -99,6 +99,7 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
     // The state doesn't matter if an error occures
     if(event == EVT_ERROR_DETECTED)
     {
+    	uart_send_state_transition(sm->currentState, STATE_ERROR);
     	sm->currentState = STATE_ERROR;
     	return;
     }
@@ -113,11 +114,16 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
             break;
 
         case STATE_IDLE:
-        	if(event = EVT_TIMER_ELAPSED)
+        	if(event == EVT_TIMER_ELAPSED)
         	{
         		uart_send_state_transition(sm->currentState, STATE_READ_SENSOR);
         		sm->currentState = STATE_READ_SENSOR;
         	}
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				sm->currentState = STATE_SLEEP;
+			}
             break;
 
         case STATE_READ_SENSOR:
@@ -125,16 +131,36 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
         		uart_send_state_transition(sm->currentState, STATE_SEND_LOG_UART);
         		sm->currentState = STATE_SEND_LOG_UART;
         	}
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				sm->currentState = STATE_SLEEP;
+			}
             break;
         case STATE_SEND_LOG_UART:
         	if(event == EVT_UART_SEND_COMPLETE){
 				uart_send_state_transition(sm->currentState, STATE_IDLE);
 				sm->currentState = STATE_IDLE;
 			}
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				sm->currentState = STATE_SLEEP;
+			}
         	break;
         case STATE_SLEEP:
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				sm->currentState = STATE_WAKEUP;
+			}
+
         	break;
         case STATE_WAKEUP:
+        	if(event == EVT_SYSTEM_READY)
+        	{
+        		sm->currentState = STATE_IDLE;
+        	}
         	break;
         case STATE_ERROR:
             if (event == EVT_RESET) {
@@ -157,7 +183,7 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
 static void State_Init(void) {
     // Initialization logic (hardware init, boot checks, etc.)
 	R_Systeminit();
-	EI();
+
 
     // Start I2C Peripheral
     //R_Config_RIIC0_Start();
@@ -179,6 +205,11 @@ static void State_Init(void) {
     g_rtc_value.sec		=	0;
 
     R_Config_RTCA0_Set_CounterValue(g_rtc_value);
+
+    // Internal Interrupt INT12
+    R_Config_INTC_INTP12_Start();
+
+    EI();
 
     // When init is successful -> Raise an event
     g_event = EVT_SYSTEM_READY;
@@ -209,7 +240,7 @@ static void State_ReadSensor(void) {
 
     sprintf(g_temp_measurement.timestamp, "%02d:%02d:%02d", g_rtc_value.hour, g_rtc_value.min, g_rtc_value.sec);
 
-    g_event = EVT_SENSOR_READ_SUCCESS;
+    g_event = (g_event == EVT_NONE)?EVT_SENSOR_READ_SUCCESS:g_event; // Only assign if meanwhile a error or button press didn't occure
 }
 
 /**
@@ -219,7 +250,7 @@ static void State_UartLog(void) {
 
     // Waiting for an action (e.g. user input or external trigger)
 	uart_send_log_humidity_and_temperature(g_temp_measurement);
-	g_event = EVT_UART_SEND_COMPLETE;
+	g_event = (g_event == EVT_NONE)?EVT_UART_SEND_COMPLETE:g_event; // Only assign if meanwhile a error or button press didn't occure
 }
 
 /**
@@ -227,14 +258,26 @@ static void State_UartLog(void) {
  */
 static void State_Sleep(void) {
 
-    // Waiting for an action (e.g. user input or external trigger)
+		// Stop the interval Timer
+		R_Config_TAUB0_0_Stop();
+
+		// Turn the LED OFF -> save more power
+		PORT.P8 = _PORT_Pn5_OUTPUT_LOW;
+
+		// Enter LPM -> TODO
+
+
 }
 
 /**
  * @brief Logic for the WAKEUP state.
  */
 static void State_WakeUp(void) {
-    // Waiting for an action (e.g. user input or external trigger)
+
+    // Start the Interval Timer again
+	R_Config_TAUB0_0_Start();
+
+	g_event = EVT_SYSTEM_READY;
 }
 
 /**

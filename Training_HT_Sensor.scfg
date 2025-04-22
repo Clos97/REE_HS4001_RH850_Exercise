@@ -391,7 +391,7 @@
         <Item generateEntity="true" generateFunction="false" id="Port_INTP6" interruptHandlerFlag="false" interruptHandlerName="eiint128" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="Port_INTP7" interruptHandlerFlag="false" interruptHandlerName="eiint129" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="Port_INTP8" interruptHandlerFlag="false" interruptHandlerName="eiint130" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="Port_INTP12" interruptHandlerFlag="false" interruptHandlerName="eiint131" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="Port_INTP12" interruptHandlerFlag="true" interruptHandlerName="r_Config_INTC_intp12_interrupt" oSManagementInterrupt="false" priority="4"/>
         <Item generateEntity="true" generateFunction="false" id="CSIH2_INTCSIH2IC" interruptHandlerFlag="false" interruptHandlerName="eiint132" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUD0_INTTAUD0I0_2" interruptHandlerFlag="false" interruptHandlerName="eiint132" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="CSIH2_INTCSIH2IR" interruptHandlerFlag="false" interruptHandlerName="eiint133" oSManagementInterrupt="false" priority="15"/>
@@ -575,6 +575,7 @@
     </tool>
     <tool id="Pins" version="1.0.1.0">
         <pinItem allocation="20$1" comments="" direction="None" id="RLIN30TX" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="68" comments="" direction="None" id="INTP12" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="70" comments="" direction="None" id="TAUB0O0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="157" comments="" direction="None" id="TAUB0O1" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="26$1" comments="" direction="None" id="RIIC0SDA" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
@@ -1670,6 +1671,770 @@
             </allocatable>
             <component description="The Real-Time Clock (RTC) is function that provides information about the present time and date and can generate wake-up signals (interrupts, alarms)." detailDescription="" display="Real-Time Clock" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.rtc" version="1.5.0"/>
             <allocator channelLevel0="0" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Real-Time Clock 0" display="RTCA0" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850f1kms1s4.rtc0" type="">
+                <context/>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+        <configuration apiMode="FULL_API" id="b696c045-f694-445f-9770-995de1a59f98" inuse="true" name="Config_INTC">
+            <allocatable id="ICU">
+                <allocatable id="IRQ0">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ1">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ2">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ3">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ4">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ5">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ6">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ7">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ8">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ9">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ10">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ11">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ12">
+                    <option enabled="true" id="enableINTP" selection="enable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="intpType" selection="rising">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="intpPriority" selection="Level4">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ13">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ14">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ15">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ16">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ17">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ18">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ19">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ20">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ21">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ22">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="IRQ23">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpType" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                        <item id="low" input="" vlaue="0"/>
+                        <item id="high" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level15">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <option enabled="true" id="enableNMI" selection="disable">
+                    <item id="enable" input="" vlaue="0"/>
+                    <item id="disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="nmiType" selection="falling">
+                    <item id="falling" input="" vlaue="0"/>
+                    <item id="rising" input="" vlaue="0"/>
+                    <item id="both" input="" vlaue="0"/>
+                    <item id="low" input="" vlaue="0"/>
+                    <item id="high" input="" vlaue="0"/>
+                </option>
+            </allocatable>
+            <component description="The Interrupt Controller (INTC) is function that sets request such as non-maskable interrupt(NMI) and external pin interrupts." detailDescription="" display="Interrupt Controller" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.icu" version="1.5.0"/>
+            <allocator channelLevel0="" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Interrupt Controller" display="INTC" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.icu" type="">
                 <context/>
             </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>

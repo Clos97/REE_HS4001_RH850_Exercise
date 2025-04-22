@@ -75,6 +75,7 @@ void main(void)
 		// Init the state machine
 		StateMachine_Init(&g_StateMachine);
 
+
 		// Start the state machine with the INIT State
 		g_StateMachine.stateFunctions[g_StateMachine.currentState]();
 

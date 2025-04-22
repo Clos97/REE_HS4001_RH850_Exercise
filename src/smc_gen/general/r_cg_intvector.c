@@ -309,7 +309,7 @@ extern void eiint129(void);
 /* External interrupt; */
 extern void eiint130(void);
 /* External interrupt; */
-extern void eiint131(void);
+extern void r_Config_INTC_intp12_interrupt(void);
 /* CSIH2 communication status interrupt; */
 extern void eiint132(void);
 /* CSIH2 receive status interrupt; */
@@ -1066,7 +1066,7 @@ void * const INT_Vectors[] = {
     /* External interrupt; */
     (void *)eiint130,
     /* External interrupt; */
-    (void *)eiint131,
+    (void *)r_Config_INTC_intp12_interrupt,
     /* CSIH2 communication status interrupt; */
     (void *)eiint132,
     /* CSIH2 receive status interrupt; */

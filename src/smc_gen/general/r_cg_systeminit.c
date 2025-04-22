@@ -40,6 +40,7 @@ Includes
 #include "Config_TAUB0_1.h"
 #include "Config_UART0.h"
 #include "Config_RTCA0.h"
+#include "Config_INTC.h"
 #include "r_cg_cgc.h"
 /* Start user code for include. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
@@ -66,4 +67,5 @@ void R_Systeminit(void)
     R_Config_TAUB0_1_Create();
     R_Config_UART0_Create();
     R_Config_RTCA0_Create();
+    R_Config_INTC_Create();
 }

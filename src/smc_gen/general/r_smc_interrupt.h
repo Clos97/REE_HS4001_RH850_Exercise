@@ -155,7 +155,7 @@ Macro definitions
 #define INTC_PORT_INTP6_PRIORITY                               _INT_PRIORITY_15
 #define INTC_PORT_INTP7_PRIORITY                               _INT_PRIORITY_15
 #define INTC_PORT_INTP8_PRIORITY                               _INT_PRIORITY_15
-#define INTC_PORT_INTP12_PRIORITY                              _INT_PRIORITY_15
+#define INTC_PORT_INTP12_PRIORITY                              _INT_PRIORITY_4
 #define INTC_CSIH2_INTCSIH2IC_PRIORITY                         _INT_PRIORITY_15
 #define INTC_TAUD0_INTTAUD0I0_2_PRIORITY                       _INT_PRIORITY_15
 #define INTC_CSIH2_INTCSIH2IR_PRIORITY                         _INT_PRIORITY_15

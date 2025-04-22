@@ -18,64 +18,39 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name        : Config_TAUB0_0_user.c
-* Component Version: 1.6.0
+* File Name        : Config_INTC.h
+* Component Version: 1.5.0
 * Device(s)        : R7F701649
-* Description      : This file implements device driver for Config_TAUB0_0.
+* Description      : This file implements device driver for Config_INTC.
 ***********************************************************************************************************************/
-/***********************************************************************************************************************
-Pragma directive
-***********************************************************************************************************************/
-/* Start user code for pragma. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
 Includes
 ***********************************************************************************************************************/
-#include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
-#include "Config_TAUB0_0.h"
-/* Start user code for include. Do not edit comment generated here */
-#include "state_machine.h"
-/* End user code. Do not edit comment generated here */
+#include "r_cg_intc.h"
+
+#ifndef CFG_Config_INTC_H
+#define CFG_Config_INTC_H
 
 /***********************************************************************************************************************
-Global variables and functions
+Macro definitions (Register bit)
 ***********************************************************************************************************************/
-/* Start user code for global. Do not edit comment generated here */
-extern Event_t g_event;
-extern StateMachine_t g_StateMachine;
-/* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_Config_TAUB0_0_Create_UserInit
-* Description  : This function adds user code after initializing the TAUB00 channel
-* Arguments    : None
-* Return Value : None
+Macro definitions
 ***********************************************************************************************************************/
-void R_Config_TAUB0_0_Create_UserInit(void)
-{
-    /* Start user code for user init. Do not edit comment generated here */
-    /* End user code. Do not edit comment generated here */
-}
 
 /***********************************************************************************************************************
-* Function Name: r_Config_TAUB0_0_interrupt
-* Description  : This function is TAUB00 interrupt service routine
-* Arguments    : None
-* Return Value : None
+Typedef definitions
 ***********************************************************************************************************************/
-#pragma interrupt r_Config_TAUB0_0_interrupt(enable=false, channel=142, fpu=true, callt=false)
-void r_Config_TAUB0_0_interrupt(void)
-{
-    /* Start user code for r_Config_TAUB0_0_interrupt. Do not edit comment generated here */
-	// Only raise the event, when the controller is ready for it
-	if(g_StateMachine.currentState == STATE_IDLE && g_event == EVT_NONE)
-	{
-		g_event = EVT_TIMER_ELAPSED;
-	}
-	/* End user code. Do not edit comment generated here */
-}
 
-/* Start user code for adding. Do not edit comment generated here */
+/***********************************************************************************************************************
+Global functions
+***********************************************************************************************************************/
+void R_Config_INTC_Create(void);
+void R_Config_INTC_INTP12_Start(void);
+void R_Config_INTC_INTP12_Stop(void);
+void R_Config_INTC_Create_UserInit(void);
+/* Start user code for function. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
+#endif

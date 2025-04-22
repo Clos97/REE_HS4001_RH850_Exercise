@@ -18,64 +18,39 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name        : Config_TAUB0_0_user.c
-* Component Version: 1.6.0
+* File Name        : r_cg_intc.h
+* Version          : 1.0.140
 * Device(s)        : R7F701649
-* Description      : This file implements device driver for Config_TAUB0_0.
+* Description      : General header file for INTC peripheral.
 ***********************************************************************************************************************/
+
+#ifndef INTC_H
+#define INTC_H
+
 /***********************************************************************************************************************
-Pragma directive
+Macro definitions (Register bit)
 ***********************************************************************************************************************/
-/* Start user code for pragma. Do not edit comment generated here */
+/*
+    Filter Control Register (FCLA0CTLm_<name>)
+*/
+/* NMI/INTPn interrupt detecting method select (FCLA0INTLm_<name>,FCLA0INTFm_<name>,FCLA0INTRm_<name> */
+#define _INTC_EDGE_RISING                          (0x01U) /* Rising edge detection */
+#define _INTC_EDGE_FALLING                         (0x02U) /* Falling edge detection */
+#define _INTC_EDGE_BOTH                            (0x03U) /* Both edges detection */
+#define _INTC_LEVEL_LOW                            (0x04U) /* Low level detection */
+#define _INTC_LEVEL_HIGH                           (0x05U) /* High level detection */
+
+/***********************************************************************************************************************
+Macro definitions
+***********************************************************************************************************************/
+
+/***********************************************************************************************************************
+Typedef definitions
+***********************************************************************************************************************/
+
+/***********************************************************************************************************************
+Global functions
+***********************************************************************************************************************/
+/* Start user code for function. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
-
-/***********************************************************************************************************************
-Includes
-***********************************************************************************************************************/
-#include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
-#include "Config_TAUB0_0.h"
-/* Start user code for include. Do not edit comment generated here */
-#include "state_machine.h"
-/* End user code. Do not edit comment generated here */
-
-/***********************************************************************************************************************
-Global variables and functions
-***********************************************************************************************************************/
-/* Start user code for global. Do not edit comment generated here */
-extern Event_t g_event;
-extern StateMachine_t g_StateMachine;
-/* End user code. Do not edit comment generated here */
-
-/***********************************************************************************************************************
-* Function Name: R_Config_TAUB0_0_Create_UserInit
-* Description  : This function adds user code after initializing the TAUB00 channel
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
-void R_Config_TAUB0_0_Create_UserInit(void)
-{
-    /* Start user code for user init. Do not edit comment generated here */
-    /* End user code. Do not edit comment generated here */
-}
-
-/***********************************************************************************************************************
-* Function Name: r_Config_TAUB0_0_interrupt
-* Description  : This function is TAUB00 interrupt service routine
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
-#pragma interrupt r_Config_TAUB0_0_interrupt(enable=false, channel=142, fpu=true, callt=false)
-void r_Config_TAUB0_0_interrupt(void)
-{
-    /* Start user code for r_Config_TAUB0_0_interrupt. Do not edit comment generated here */
-	// Only raise the event, when the controller is ready for it
-	if(g_StateMachine.currentState == STATE_IDLE && g_event == EVT_NONE)
-	{
-		g_event = EVT_TIMER_ELAPSED;
-	}
-	/* End user code. Do not edit comment generated here */
-}
-
-/* Start user code for adding. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */
+#endif
