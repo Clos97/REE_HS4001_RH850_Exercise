@@ -40,7 +40,7 @@ Macro definitions (Register bit)
 Macro definitions
 ***********************************************************************************************************************/
 #define _RIIC0_BITRATE_LOW_LEVEL_PERIOD           (0x0000001FUL) /* Bit Rate Low-Level Period */
-#define _RIIC0_BITRATE_HIGH_LEVEL_PERIOD          (0x0000000CUL) /* Bit Rate High-Level Period */
+#define _RIIC0_BITRATE_HIGH_LEVEL_PERIOD          (0x00000002UL) /* Bit Rate High-Level Period */
 
 /***********************************************************************************************************************
 Typedef definitions
