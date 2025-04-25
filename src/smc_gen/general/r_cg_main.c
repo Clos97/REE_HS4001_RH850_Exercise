@@ -55,7 +55,7 @@ volatile Event_t g_event = EVT_NONE;
 // Maybe thes variables are obsolete -> State machine needs to handle this
 MD_STATUS	err;
 extern volatile uint8_t          g_riic0_state;
-uint8_t g_useStateMachine = 0U; // Turn on the state machine -> Off for testing the individual peripherals
+uint8_t g_useStateMachine = 1U; // Turn on the state machine -> Off for testing the individual peripherals
 extern uint8_t uart_isr_status_flag_send_complete;
 TemperatureMeasurement g_temp_measurement;
 rtc_counter_value_t g_rtc_value;
@@ -73,26 +73,6 @@ void main(void)
 {
     r_main_userinit();
     /* Start user code for main. Do not edit comment generated here */
-
-    // Playground for testing without use of the State machine
-
-    R_Systeminit();
-    EI();
-
-    R_Config_RIIC0_Start();
-
-	while(1)
-	{
-		start_measurement(&g_temp_measurement);
-
-		if(g_temp_measurement.status != TEMP_STATE_DATA_VALID)
-		{
-			while(1);
-		}
-		calc_humidity(&g_temp_measurement);
-		calc_temperature(&g_temp_measurement);
-	}
-
     if(g_useStateMachine == 1U)
     {
 		// Init the state machine
@@ -131,8 +111,6 @@ void r_main_userinit(void)
     /* Start user code for r_main_userinit. Do not edit comment generated here */
     /* End user code. Do not edit comment generated here */
 }
-
-
 
 /* Start user code for adding. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */

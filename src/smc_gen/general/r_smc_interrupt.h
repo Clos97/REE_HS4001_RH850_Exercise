@@ -74,7 +74,7 @@ Macro definitions
 #define INTC_CSIH0_INTCSIH0IJC_PRIORITY                        _INT_PRIORITY_15
 #define INTC_ADCA0_INTADCA0I2_2_PRIORITY                       _INT_PRIORITY_15
 #define INTC_RLIN30_INTRLIN30_PRIORITY                         _INT_PRIORITY_15
-#define INTC_RLIN30_INTRLIN30UR0_PRIORITY                      _INT_PRIORITY_4
+#define INTC_RLIN30_INTRLIN30UR0_PRIORITY                      _INT_PRIORITY_11
 #define INTC_RLIN30_INTRLIN30UR1_PRIORITY                      _INT_PRIORITY_15
 #define INTC_RLIN30_INTRLIN30UR2_PRIORITY                      _INT_PRIORITY_15
 #define INTC_PORT_INTP0_PRIORITY                               _INT_PRIORITY_15
@@ -164,8 +164,8 @@ Macro definitions
 #define INTC_TAUD0_INTTAUD0I6_2_PRIORITY                       _INT_PRIORITY_15
 #define INTC_CSIH2_INTCSIH2IJC_PRIORITY                        _INT_PRIORITY_15
 #define INTC_TAUD0_INTTAUD0I8_2_PRIORITY                       _INT_PRIORITY_15
-#define INTC_TAUB0_INTTAUB0I0_PRIORITY                         _INT_PRIORITY_9
-#define INTC_TAUB0_INTTAUB0I1_PRIORITY                         _INT_PRIORITY_15
+#define INTC_TAUB0_INTTAUB0I0_PRIORITY                         _INT_PRIORITY_12
+#define INTC_TAUB0_INTTAUB0I1_PRIORITY                         _INT_PRIORITY_5
 #define INTC_TAUB0_INTTAUB0I2_PRIORITY                         _INT_PRIORITY_15
 #define INTC_TAUB0_INTTAUB0I3_PRIORITY                         _INT_PRIORITY_15
 #define INTC_TAUB0_INTTAUB0I4_PRIORITY                         _INT_PRIORITY_15

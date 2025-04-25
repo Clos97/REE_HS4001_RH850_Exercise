@@ -310,7 +310,7 @@
         <Item generateEntity="true" generateFunction="false" id="CSIH0_INTCSIH0IJC" interruptHandlerFlag="false" interruptHandlerName="eiint32" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="ADCA0_INTADCA0I2_2" interruptHandlerFlag="false" interruptHandlerName="eiint32" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30" interruptHandlerFlag="false" interruptHandlerName="eiint33" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR0" interruptHandlerFlag="true" interruptHandlerName="r_Config_UART0_interrupt_send" oSManagementInterrupt="false" priority="4"/>
+        <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR0" interruptHandlerFlag="true" interruptHandlerName="r_Config_UART0_interrupt_send" oSManagementInterrupt="false" priority="11"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR1" interruptHandlerFlag="false" interruptHandlerName="eiint35" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR2" interruptHandlerFlag="false" interruptHandlerName="eiint36" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="Port_INTP0" interruptHandlerFlag="false" interruptHandlerName="eiint37" oSManagementInterrupt="false" priority="15"/>
@@ -400,8 +400,8 @@
         <Item generateEntity="true" generateFunction="false" id="TAUD0_INTTAUD0I6_2" interruptHandlerFlag="false" interruptHandlerName="eiint134" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="CSIH2_INTCSIH2IJC" interruptHandlerFlag="false" interruptHandlerName="eiint135" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUD0_INTTAUD0I8_2" interruptHandlerFlag="false" interruptHandlerName="eiint135" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I0" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_0_interrupt" oSManagementInterrupt="false" priority="9"/>
-        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I1" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_1_interrupt" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I0" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_0_interrupt" oSManagementInterrupt="false" priority="12"/>
+        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I1" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_1_interrupt" oSManagementInterrupt="false" priority="5"/>
         <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I2" interruptHandlerFlag="false" interruptHandlerName="eiint144" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I3" interruptHandlerFlag="false" interruptHandlerName="eiint145" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I4" interruptHandlerFlag="false" interruptHandlerName="eiint146" oSManagementInterrupt="false" priority="15"/>
@@ -810,7 +810,7 @@
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="IntPriority" selection="Level9">
+                <option enabled="true" id="IntPriority" selection="Level12">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -1350,7 +1350,7 @@
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="IntPriority" selection="Level15">
+                <option enabled="true" id="IntPriority" selection="Level5">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -1401,7 +1401,7 @@
                     <item id="item_invertedoutput" input="" vlaue="0"/>
                 </option>
                 <option enabled="true" id="CBBaudrate" selection="BaudrateValue">
-                    <item id="BaudrateValue" input="76800" vlaue="0"/>
+                    <item id="BaudrateValue" input="153600" vlaue="0"/>
                     <item id="cmBaudrate_300" input="300" vlaue="0"/>
                     <item id="cmBaudrate_600" input="600" vlaue="0"/>
                     <item id="cmBaudrate_1200" input="1200" vlaue="0"/>
@@ -1419,7 +1419,7 @@
                     <item id="driveStrengthLow" input="" vlaue="0"/>
                     <item id="driveStrengthHigh" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="IntCBTIPriority" selection="Level4">
+                <option enabled="true" id="IntCBTIPriority" selection="Level11">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
