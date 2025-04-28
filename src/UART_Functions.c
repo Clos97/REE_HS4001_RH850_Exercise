@@ -7,7 +7,10 @@
 
 #include "UART_Functions.h"
 
-
+extern Event_t g_event;
+extern uint8_t uart_isr_status_flag_send_complete;
+extern TemperatureMeasurement g_temp_measurement;
+char g_tx_buf1[UART_BUFFER_SIZE];
 
 void uart_send_state_transition(State_t old_state, State_t new_state)
 {

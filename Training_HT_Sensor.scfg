@@ -335,7 +335,7 @@
         <Item generateEntity="true" generateFunction="false" id="CSIG0_INTCSIG0IRE" interruptHandlerFlag="false" interruptHandlerName="eiint57" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN240_INTRLIN20" interruptHandlerFlag="false" interruptHandlerName="eiint58" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN240_INTRLIN21" interruptHandlerFlag="false" interruptHandlerName="eiint59" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA0" interruptHandlerFlag="true" interruptHandlerName="r_Config_DMAC00_dmac00_interrupt" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA0" interruptHandlerFlag="true" interruptHandlerName="r_Config_DMAC00_dmac00_interrupt" oSManagementInterrupt="false" priority="5"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA1" interruptHandlerFlag="false" interruptHandlerName="eiint61" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA2" interruptHandlerFlag="false" interruptHandlerName="eiint62" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA3" interruptHandlerFlag="false" interruptHandlerName="eiint63" oSManagementInterrupt="false" priority="15"/>
@@ -353,7 +353,7 @@
         <Item generateEntity="true" generateFunction="false" id="DMAC1_INTDMA15" interruptHandlerFlag="false" interruptHandlerName="eiint75" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0TI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_transmit_interrupt" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0EE" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_error_interrupt" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0RI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_receive_interrupt" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0RI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_receive_interrupt" oSManagementInterrupt="false" priority="5"/>
         <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0TEI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_transmitend_interrupt" oSManagementInterrupt="false" priority="10"/>
         <Item generateEntity="true" generateFunction="false" id="TAUJ0_INTTAUJ0I0" interruptHandlerFlag="false" interruptHandlerName="eiint80" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUJ0_INTTAUJ0I1" interruptHandlerFlag="false" interruptHandlerName="eiint81" oSManagementInterrupt="false" priority="15"/>
@@ -574,13 +574,13 @@
         <Item generateEntity="true" generateFunction="false" id="GRZF_INTGRZF" interruptHandlerFlag="false" interruptHandlerName="eiint376" oSManagementInterrupt="false" priority="15"/>
     </tool>
     <tool id="Pins" version="1.0.1.0">
-        <pinItem allocation="20$1" comments="" direction="None" id="RLIN30TX" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="26$1" comments="" direction="None" id="RIIC0SDA" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="70" comments="" direction="None" id="TAUB0O0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="157" comments="" direction="None" id="TAUB0O1" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="26$1" comments="" direction="None" id="RIIC0SDA" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="27$1" comments="" direction="None" id="RIIC0SCL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="85" comments="" direction="None" id="P8_6" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="84" comments="" direction="None" id="P8_5" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="27$1" comments="" direction="None" id="RIIC0SCL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="20$1" comments="" direction="None" id="RLIN30TX" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
     </tool>
     <tool id="Summary" version="1.0.0.0">
         <option id="com.renesas.smc.code.path" value="src\smc_gen"/>
@@ -700,7 +700,7 @@
                     <item id="Level14" input="" vlaue="0"/>
                     <item id="Level15" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="RXIInter" selection="Level15">
+                <option enabled="true" id="RXIInter" selection="Level5">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -1692,7 +1692,7 @@
                         <item id="6" input="" vlaue="0"/>
                         <item id="7" input="" vlaue="0"/>
                     </option>
-                    <option enabled="true" id="triggerSourceSelection" selection="softwareTrigger">
+                    <option enabled="true" id="triggerSourceSelection" selection="INTRIIC0RI">
                         <item id="softwareTrigger" input="" vlaue="0"/>
                         <item id="TAUD0REQSEL0" input="" vlaue="0"/>
                         <item id="TAUD0REQSEL1" input="" vlaue="0"/>
@@ -1886,7 +1886,7 @@
                         <item id="fixed" input="" vlaue="0"/>
                     </option>
                     <option enabled="true" id="transferCount" selection="transferCountTxt">
-                        <item id="transferCountTxt" input="1" vlaue="1"/>
+                        <item id="transferCountTxt" input="4" vlaue="4"/>
                     </option>
                     <option enabled="true" id="dataSize" selection="8bit">
                         <item id="8bit" input="" vlaue="0"/>
@@ -1932,7 +1932,7 @@
                         <item id="checked" input="" vlaue="0"/>
                         <item id="unchecked" input="" vlaue="0"/>
                     </option>
-                    <option enabled="true" id="intPriority" selection="Level15">
+                    <option enabled="true" id="intPriority" selection="Level5">
                         <item id="Level0" input="" vlaue="0"/>
                         <item id="Level1" input="" vlaue="0"/>
                         <item id="Level2" input="" vlaue="0"/>

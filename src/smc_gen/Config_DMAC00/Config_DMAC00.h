@@ -41,7 +41,7 @@ Macro definitions
 ***********************************************************************************************************************/
 #define _DMAC00_SOURCE_ADDRESS                (0x00000123UL)
 #define _DMAC00_DESTINATION_ADDRESS           (0x00000456UL)
-#define _DMAC00_TRANSFER_COUNT                (0x00000001UL)
+#define _DMAC00_TRANSFER_COUNT                (0x00000004UL)
 
 /***********************************************************************************************************************
 Typedef definitions

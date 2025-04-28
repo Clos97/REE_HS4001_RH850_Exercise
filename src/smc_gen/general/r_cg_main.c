@@ -59,8 +59,85 @@ uint8_t g_useStateMachine = 0U; // Turn on the state machine -> Off for testing 
 extern uint8_t uart_isr_status_flag_send_complete;
 TemperatureMeasurement g_temp_measurement;
 rtc_counter_value_t g_rtc_value;
+
+// DMA TESTING AREA TODO: Delete if the code is Working
+uint8_t len;
+#define I2C_RECEIVE_SIZE 4
+volatile uint8_t i2c_receive_buffer[I2C_RECEIVE_SIZE];
+volatile uint8_t i2c_receive_buffer_dma[I2C_RECEIVE_SIZE];
+extern uint8_t i2c_transmit_flag;
+extern uint8_t i2c_receive_flag;
 /* End user code. Do not edit comment generated here */
 void r_main_userinit(void);
+
+// Test Function
+void testFunction(void)
+{
+	uint32_t cnt_sfty =0;
+	R_Systeminit();
+	EI();
+
+	// Start I2C Peripheral
+	R_Config_RIIC0_Start();
+	// Set the Memory protection (PEG register) b.c. I want to access the local RAM
+	PEG.G0MK.UINT32 = 0xFFFFF000;
+	PEG.G0BA.UINT32 = (0xFEDE8000 & 0xFFFFF000) |
+	                  (1 << 2) |   // Schreibzugriff
+	                  (1 << 1) |   // Lesezugriff
+	                  (1 << 0);    // Bereich aktiv
+
+	// Init DMA
+	PDMA0.DSA0 = (uint32_t) i2c_receive_buffer_dma;
+	PDMA0.DDA0 = (uint32_t) &RIIC0.DRR;
+	PDMA0.DTC0 = 4;//(4 << 16) | 4;
+	/* Address Mode:
+	   - Source Address: Fixed (IICRX immer gleiche Adresse)
+	   - Destination Address: Incremented (Empfangspuffer inkrementieren)
+	*/
+	//PDMA0.DMCRB = 0x00000000; // Default-Einstellung passt meistens
+
+
+	// Start the DMA
+	R_Config_DMAC00_Start();
+
+	i2c_transmit_flag 	= 0;
+	cnt_sfty			= 0;
+
+	R_Config_RIIC0_Master_Send(SENSOR_SLAVE_ADDRESS,"", 0);
+
+	while(i2c_transmit_flag	==	0U)
+	{
+		if(cnt_sfty >= SAVETY_CNT)
+		{
+			return;
+		}
+		cnt_sfty++;
+	}
+
+	cnt_sfty = 0;
+
+	// Delay
+	while(cnt_sfty < DELAY_CNT)
+	{
+		cnt_sfty++;
+	}
+
+	cnt_sfty = 0;
+	// Measure
+	memset(i2c_receive_buffer, 0, sizeof(i2c_receive_buffer));
+	memset(i2c_receive_buffer_dma, 0, sizeof(i2c_receive_buffer_dma));
+
+
+	R_Config_RIIC0_Master_Receive(0x44, i2c_receive_buffer, I2C_RECEIVE_SIZE);
+
+	// Delay
+	while(cnt_sfty < DELAY_CNT)
+	{
+		cnt_sfty++;
+	}
+
+	cnt_sfty = 0;
+}
 
 /***********************************************************************************************************************
 * Function Name: main
@@ -71,6 +148,11 @@ void r_main_userinit(void);
 void main(void)
 {
     r_main_userinit();
+
+    // Here comes the DMA Code just for testing
+    testFunction();
+
+	//============================================================================================
     /* Start user code for main. Do not edit comment generated here */
     if(g_useStateMachine == 1U)
     {
