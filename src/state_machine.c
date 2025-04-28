@@ -214,8 +214,9 @@ static void State_Init(void) {
     // Internal Interrupt INT12
     R_Config_INTC_INTP12_Start();
 
+
     // Prepare the Stop mode -> Stand by Controller
-    R_Config_STBC_Prepare_Stop_Mode(); // This is not working
+    //R_Config_STBC_Prepare_Stop_Mode(); // This is not working
 
     EI();
 

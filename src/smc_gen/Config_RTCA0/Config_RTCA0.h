@@ -52,8 +52,6 @@ Macro definitions
 #define _RTC_COUNTER_WEEK                      (0x02U)
 #define _RTC_COUNTER_MONTH                     (0x04U)
 #define _RTC_COUNTER_YEAR                      (0x25U)
-#define _RTC_ALARM_MIN                         (0x18U)
-#define _RTC_ALARM_HOUR                        (0x13U)
 #define _RTC_SUB_COUNTER_COMPARE_VALUE         (0x0001D4BFUL)
 
 /***********************************************************************************************************************

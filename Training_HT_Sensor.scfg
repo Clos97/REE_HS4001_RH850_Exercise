@@ -30,7 +30,7 @@
             <Item enable="true" id="hs_out_stop" type="SItem"/>
             <Item enable="true" id="hs_out_continues" type="SItem"/>
         </option>
-        <option enable="true" id="rtca_stop_mode" selection="rtca_out_continues">
+        <option enable="true" id="rtca_stop_mode" selection="rtca_out_stop">
             <Item enable="true" id="rtca_out_stop" type="SItem"/>
             <Item enable="true" id="rtca_out_continues" type="SItem"/>
         </option>
@@ -310,7 +310,7 @@
         <Item generateEntity="true" generateFunction="false" id="CSIH0_INTCSIH0IJC" interruptHandlerFlag="false" interruptHandlerName="eiint32" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="ADCA0_INTADCA0I2_2" interruptHandlerFlag="false" interruptHandlerName="eiint32" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30" interruptHandlerFlag="false" interruptHandlerName="eiint33" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR0" interruptHandlerFlag="true" interruptHandlerName="r_Config_UART0_interrupt_send" oSManagementInterrupt="false" priority="4"/>
+        <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR0" interruptHandlerFlag="true" interruptHandlerName="r_Config_UART0_interrupt_send" oSManagementInterrupt="false" priority="11"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR1" interruptHandlerFlag="false" interruptHandlerName="eiint35" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN30_INTRLIN30UR2" interruptHandlerFlag="false" interruptHandlerName="eiint36" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="Port_INTP0" interruptHandlerFlag="false" interruptHandlerName="eiint37" oSManagementInterrupt="false" priority="15"/>
@@ -335,7 +335,7 @@
         <Item generateEntity="true" generateFunction="false" id="CSIG0_INTCSIG0IRE" interruptHandlerFlag="false" interruptHandlerName="eiint57" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN240_INTRLIN20" interruptHandlerFlag="false" interruptHandlerName="eiint58" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RLIN240_INTRLIN21" interruptHandlerFlag="false" interruptHandlerName="eiint59" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA0" interruptHandlerFlag="false" interruptHandlerName="eiint60" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA0" interruptHandlerFlag="true" interruptHandlerName="r_Config_DMAC00_dmac00_interrupt" oSManagementInterrupt="false" priority="5"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA1" interruptHandlerFlag="false" interruptHandlerName="eiint61" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA2" interruptHandlerFlag="false" interruptHandlerName="eiint62" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="DMAC0_INTDMA3" interruptHandlerFlag="false" interruptHandlerName="eiint63" oSManagementInterrupt="false" priority="15"/>
@@ -353,7 +353,7 @@
         <Item generateEntity="true" generateFunction="false" id="DMAC1_INTDMA15" interruptHandlerFlag="false" interruptHandlerName="eiint75" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0TI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_transmit_interrupt" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0EE" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_error_interrupt" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0RI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_receive_interrupt" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0RI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_receive_interrupt" oSManagementInterrupt="false" priority="5"/>
         <Item generateEntity="true" generateFunction="false" id="RIIC0_INTRIIC0TEI" interruptHandlerFlag="true" interruptHandlerName="r_Config_RIIC0_transmitend_interrupt" oSManagementInterrupt="false" priority="10"/>
         <Item generateEntity="true" generateFunction="false" id="TAUJ0_INTTAUJ0I0" interruptHandlerFlag="false" interruptHandlerName="eiint80" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUJ0_INTTAUJ0I1" interruptHandlerFlag="false" interruptHandlerName="eiint81" oSManagementInterrupt="false" priority="15"/>
@@ -400,8 +400,8 @@
         <Item generateEntity="true" generateFunction="false" id="TAUD0_INTTAUD0I6_2" interruptHandlerFlag="false" interruptHandlerName="eiint134" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="CSIH2_INTCSIH2IJC" interruptHandlerFlag="false" interruptHandlerName="eiint135" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUD0_INTTAUD0I8_2" interruptHandlerFlag="false" interruptHandlerName="eiint135" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I0" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_0_interrupt" oSManagementInterrupt="false" priority="9"/>
-        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I1" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_1_interrupt" oSManagementInterrupt="false" priority="15"/>
+        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I0" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_0_interrupt" oSManagementInterrupt="false" priority="12"/>
+        <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I1" interruptHandlerFlag="true" interruptHandlerName="r_Config_TAUB0_1_interrupt" oSManagementInterrupt="false" priority="5"/>
         <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I2" interruptHandlerFlag="false" interruptHandlerName="eiint144" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I3" interruptHandlerFlag="false" interruptHandlerName="eiint145" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="TAUB0_INTTAUB0I4" interruptHandlerFlag="false" interruptHandlerName="eiint146" oSManagementInterrupt="false" priority="15"/>
@@ -450,7 +450,7 @@
         <Item generateEntity="true" generateFunction="false" id="Port_INTP14" interruptHandlerFlag="false" interruptHandlerName="eiint207" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="Port_INTP15" interruptHandlerFlag="false" interruptHandlerName="eiint208" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RTCA0_INTRTCA01S" interruptHandlerFlag="false" interruptHandlerName="eiint209" oSManagementInterrupt="false" priority="15"/>
-        <Item generateEntity="true" generateFunction="false" id="RTCA0_INTRTCA0AL" interruptHandlerFlag="true" interruptHandlerName="r_Config_RTCA0_interrupt_alarm" oSManagementInterrupt="false" priority="0"/>
+        <Item generateEntity="true" generateFunction="false" id="RTCA0_INTRTCA0AL" interruptHandlerFlag="false" interruptHandlerName="eiint210" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="RTCA0_INTRTCA0R" interruptHandlerFlag="false" interruptHandlerName="eiint211" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="ADCA1_INTADCA1ERR" interruptHandlerFlag="false" interruptHandlerName="eiint212" oSManagementInterrupt="false" priority="15"/>
         <Item generateEntity="true" generateFunction="false" id="ADCA1_INTADCA1I0" interruptHandlerFlag="false" interruptHandlerName="eiint213" oSManagementInterrupt="false" priority="15"/>
@@ -575,7 +575,8 @@
     </tool>
     <tool id="Pins" version="1.0.1.0">
         <pinItem allocation="20$1" comments="" direction="None" id="RLIN30TX" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="68" comments="" direction="None" id="INTP12" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="28" comments="" direction="None" id="INTP12" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="68" comments="" direction="None" id="P0_9" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="70" comments="" direction="None" id="TAUB0O0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="157" comments="" direction="None" id="TAUB0O1" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="26$1" comments="" direction="None" id="RIIC0SDA" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
@@ -596,13 +597,13 @@
                     <item id="50" input="50" vlaue="0"/>
                     <item id="100" input="100" vlaue="0"/>
                     <item id="400" input="400" vlaue="0"/>
-                    <item id="FreeValue" input="10" vlaue="1"/>
+                    <item id="FreeValue" input="50" vlaue="1"/>
                 </option>
-                <option enabled="true" id="NoiseFilterEnable" selection="Enable">
+                <option enabled="true" id="NoiseFilterEnable" selection="Disable">
                     <item id="Disable" input="" vlaue="0"/>
                     <item id="Enable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="NoiseFilterStage" selection="SingleStageFilter">
+                <option enabled="false" id="NoiseFilterStage" selection="SingleStageFilter">
                     <item id="SingleStageFilter" input="" vlaue="0"/>
                     <item id="2StageFilter" input="" vlaue="0"/>
                     <item id="3StageFilter" input="" vlaue="0"/>
@@ -641,7 +642,7 @@
                     <item id="SCLHighLevel" input="" vlaue="0"/>
                     <item id="SCLBothLevel" input="" vlaue="0"/>
                 </option>
-                <option enabled="false" id="DeteTime" selection="LongMode">
+                <option enabled="false" id="DeteTime" selection="ShortMode">
                     <item id="LongMode" input="" vlaue="0"/>
                     <item id="ShortMode" input="" vlaue="0"/>
                 </option>
@@ -701,7 +702,7 @@
                     <item id="Level14" input="" vlaue="0"/>
                     <item id="Level15" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="RXIInter" selection="Level15">
+                <option enabled="true" id="RXIInter" selection="Level5">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -811,7 +812,7 @@
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="IntPriority" selection="Level9">
+                <option enabled="true" id="IntPriority" selection="Level12">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -866,9 +867,490 @@
                         <item id="Disable" input="" vlaue="0"/>
                     </option>
                 </allocatable>
-                <allocatable id="PORT0_Chan"/>
+                <allocatable id="PORT0_Chan">
+                    <allocatable id="PORTx0_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx1_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx2_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx3_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx4_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx5_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx6_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx7_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx8_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx9_Item">
+                        <option enabled="true" id="UseStatus" selection="In">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx10_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt1Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx11_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx12_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx13_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="PORTx14_Item">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="bidirectional" selection="bidirectionalUnuse">
+                            <item id="bidirectionalUnuse" input="" vlaue="0"/>
+                            <item id="bidirectionalUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                            <item id="Output1Use" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Opendrain" selection="opendrainUnuse">
+                            <item id="opendrainUnuse" input="" vlaue="0"/>
+                            <item id="opendrainUse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="resistorstatus" selection="resistorUnuse">
+                            <item id="resistorUnuse" input="" vlaue="0"/>
+                            <item id="resistorPullup" input="" vlaue="0"/>
+                            <item id="resistorPulldown" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="inputbuffer" selection="shmt4Item">
+                            <item id="shmt1Item" input="" vlaue="0"/>
+                            <item id="shmt4Item" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="drivestrength" selection="lowerItem">
+                            <item id="lowerItem" input="" vlaue="0"/>
+                            <item id="highItem" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                </allocatable>
                 <allocatable id="PORT0_Check">
-                    <option enabled="true" id="PortnEnable" selection="Disable">
+                    <option enabled="true" id="PortnEnable" selection="Enable">
                         <item id="Enable" input="" vlaue="0"/>
                         <item id="Disable" input="" vlaue="0"/>
                     </option>
@@ -1351,7 +1833,7 @@
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="IntPriority" selection="Level15">
+                <option enabled="true" id="IntPriority" selection="Level5">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -1402,7 +1884,7 @@
                     <item id="item_invertedoutput" input="" vlaue="0"/>
                 </option>
                 <option enabled="true" id="CBBaudrate" selection="BaudrateValue">
-                    <item id="BaudrateValue" input="76800" vlaue="0"/>
+                    <item id="BaudrateValue" input="153600" vlaue="0"/>
                     <item id="cmBaudrate_300" input="300" vlaue="0"/>
                     <item id="cmBaudrate_600" input="600" vlaue="0"/>
                     <item id="cmBaudrate_1200" input="1200" vlaue="0"/>
@@ -1420,7 +1902,7 @@
                     <item id="driveStrengthLow" input="" vlaue="0"/>
                     <item id="driveStrengthHigh" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="IntCBTIPriority" selection="Level4">
+                <option enabled="true" id="IntCBTIPriority" selection="Level11">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -1471,7 +1953,7 @@
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmInitSelect" selection="Enable">
+                <option enabled="true" id="AlarmInitSelect" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
@@ -1580,42 +2062,42 @@
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmINTSelection" selection="Enable">
+                <option enabled="true" id="AlarmINTSelection" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmSunday" selection="Disable">
+                <option enabled="false" id="AlarmSunday" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmMonday" selection="Disable">
+                <option enabled="false" id="AlarmMonday" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmTuesday" selection="Disable">
+                <option enabled="false" id="AlarmTuesday" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmWednesday" selection="Disable">
+                <option enabled="false" id="AlarmWednesday" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmThursday" selection="Disable">
+                <option enabled="false" id="AlarmThursday" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmFriday" selection="Disable">
+                <option enabled="false" id="AlarmFriday" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmSaturday" selection="Disable">
+                <option enabled="false" id="AlarmSaturday" selection="Disable">
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmTime" selection="AlarmTimeValue">
-                    <item id="AlarmTimeValue" input="13:18" vlaue="0"/>
+                <option enabled="false" id="AlarmTime" selection="AlarmTimeValue">
+                    <item id="AlarmTimeValue" input="0:0" vlaue="0"/>
                 </option>
-                <option enabled="true" id="AlarmINTPriority" selection="Level0">
+                <option enabled="false" id="AlarmINTPriority" selection="Level15">
                     <item id="Level0" input="" vlaue="0"/>
                     <item id="Level1" input="" vlaue="0"/>
                     <item id="Level2" input="" vlaue="0"/>
@@ -1641,7 +2123,7 @@
                     <item id="Enable" input="" vlaue="0"/>
                     <item id="Disable" input="" vlaue="0"/>
                 </option>
-                <option enabled="false" id="FixINTCycle" selection="EachMinute">
+                <option enabled="false" id="FixINTCycle" selection="Each025S">
                     <item id="Each025S" input="" vlaue="0"/>
                     <item id="Each05S" input="" vlaue="0"/>
                     <item id="EachS" input="" vlaue="0"/>
@@ -1675,7 +2157,568 @@
             </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
-        <configuration apiMode="FULL_API" id="b696c045-f694-445f-9770-995de1a59f98" inuse="true" name="Config_INTC">
+        <configuration apiMode="FULL_API" id="8b965888-66d6-4df5-91fc-2e9af565f60a" inuse="true" name="Config_DMAC00">
+            <allocatable id="DMAC0_Header0">
+                <allocatable id="DMAC channel0">
+                    <option enabled="true" id="chainModeSelection" selection="disabled">
+                        <item id="chainAtTheLastTransfer" input="" vlaue="0"/>
+                        <item id="alwaysChain" input="" vlaue="0"/>
+                        <item id="disabled" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="nextChainChanSelection" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="triggerSourceSelection" selection="INTRIIC0RI">
+                        <item id="softwareTrigger" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL0" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL1" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL2" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL3" input="" vlaue="0"/>
+                        <item id="INTADCA0I0" input="" vlaue="0"/>
+                        <item id="INTADCA0I1" input="" vlaue="0"/>
+                        <item id="INTADCA0I2" input="" vlaue="0"/>
+                        <item id="ADC_CONV_END0" input="" vlaue="0"/>
+                        <item id="INTCSIG0IC" input="" vlaue="0"/>
+                        <item id="INTCSIG0IR" input="" vlaue="0"/>
+                        <item id="INTRLIN30UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN30UR1" input="" vlaue="0"/>
+                        <item id="INTP0" input="" vlaue="0"/>
+                        <item id="INTP2" input="" vlaue="0"/>
+                        <item id="INTP4" input="" vlaue="0"/>
+                        <item id="INTRLIN37UR0" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL4" input="" vlaue="0"/>
+                        <item id="TAUD0REQSEL5" input="" vlaue="0"/>
+                        <item id="INTRIIC0TI" input="" vlaue="0"/>
+                        <item id="INTRIIC0RI" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I3" input="" vlaue="0"/>
+                        <item id="RSCANFDCF0" input="" vlaue="0"/>
+                        <item id="RSCANFDCF1" input="" vlaue="0"/>
+                        <item id="RSCANFDCF2" input="" vlaue="0"/>
+                        <item id="RSCANFDCF3" input="" vlaue="0"/>
+                        <item id="INTCSIH1IC" input="" vlaue="0"/>
+                        <item id="INTCSIH1IR" input="" vlaue="0"/>
+                        <item id="INTCSIH1IJC" input="" vlaue="0"/>
+                        <item id="INTP6" input="" vlaue="0"/>
+                        <item id="INTP8" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL0" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL1" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL2" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL3" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL4" input="" vlaue="0"/>
+                        <item id="TAUB0REQSEL5" input="" vlaue="0"/>
+                        <item id="INTCSIH3IC" input="" vlaue="0"/>
+                        <item id="INTCSIH3IR" input="" vlaue="0"/>
+                        <item id="INTCSIH3IJC" input="" vlaue="0"/>
+                        <item id="INTRLIN32UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN32UR1" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I2" input="" vlaue="0"/>
+                        <item id="RSCANFDCF4" input="" vlaue="0"/>
+                        <item id="RSCANFDCF5" input="" vlaue="0"/>
+                        <item id="INTRLIN34UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN34UR1" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL0" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL1" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL2" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL3" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL4" input="" vlaue="0"/>
+                        <item id="TAUB1REQSEL5" input="" vlaue="0"/>
+                        <item id="RSCANFDRF0" input="" vlaue="0"/>
+                        <item id="RSCANFDRF1" input="" vlaue="0"/>
+                        <item id="RSCANFDRF2" input="" vlaue="0"/>
+                        <item id="RSCANFDRF3" input="" vlaue="0"/>
+                        <item id="RSCANFDCF6" input="" vlaue="0"/>
+                        <item id="RSCANFDCF7" input="" vlaue="0"/>
+                        <item id="INTCSIG1IC" input="" vlaue="0"/>
+                        <item id="INTCSIG1IR" input="" vlaue="0"/>
+                        <item id="RSCANFDRF4" input="" vlaue="0"/>
+                        <item id="RSCANFDRF5" input="" vlaue="0"/>
+                        <item id="INTCSIH0IC" input="" vlaue="0"/>
+                        <item id="INTCSIH0IR" input="" vlaue="0"/>
+                        <item id="INTCSIH0IJC" input="" vlaue="0"/>
+                        <item id="INTP1" input="" vlaue="0"/>
+                        <item id="INTP3" input="" vlaue="0"/>
+                        <item id="INTP5" input="" vlaue="0"/>
+                        <item id="INTRLIN37UR1" input="" vlaue="0"/>
+                        <item id="INTCSIG2IC" input="" vlaue="0"/>
+                        <item id="INTCSIG2IR" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ0I2" input="" vlaue="0"/>
+                        <item id="RSCANFDRF6" input="" vlaue="0"/>
+                        <item id="RSCANFDRF7" input="" vlaue="0"/>
+                        <item id="INTDMAFL" input="" vlaue="0"/>
+                        <item id="INTRLIN31UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN31UR1" input="" vlaue="0"/>
+                        <item id="INTP7" input="" vlaue="0"/>
+                        <item id="INTCSIH2IC" input="" vlaue="0"/>
+                        <item id="INTCSIH2IR" input="" vlaue="0"/>
+                        <item id="INTCSIH2IJC" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ1I3" input="" vlaue="0"/>
+                        <item id="INTP9" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I2" input="" vlaue="0"/>
+                        <item id="INTTAUJ2I3" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I0" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I1" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I2" input="" vlaue="0"/>
+                        <item id="INTTAUJ3I3" input="" vlaue="0"/>
+                        <item id="INTRLIN33UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN33UR1" input="" vlaue="0"/>
+                        <item id="INTRIIC1TI" input="" vlaue="0"/>
+                        <item id="INTRIIC1RI" input="" vlaue="0"/>
+                        <item id="INTADCA1I0" input="" vlaue="0"/>
+                        <item id="INTADCA1I1" input="" vlaue="0"/>
+                        <item id="INTADCA1I2" input="" vlaue="0"/>
+                        <item id="ADC_CONV_END1" input="" vlaue="0"/>
+                        <item id="INTRLIN36UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN36UR1" input="" vlaue="0"/>
+                        <item id="INTRLIN35UR0" input="" vlaue="0"/>
+                        <item id="INTRLIN35UR1" input="" vlaue="0"/>
+                        <item id="INTSENT0RI" input="" vlaue="0"/>
+                        <item id="INTSENT1RI" input="" vlaue="0"/>
+                        <item id="INTCSIG3IC" input="" vlaue="0"/>
+                        <item id="INTCSIG3IR" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="validTriggerSelection" selection="INTTAUB0I0">
+                        <item id="INTTAUD0I0" input="" vlaue="0"/>
+                        <item id="INTTAUD0I1" input="" vlaue="0"/>
+                        <item id="INTTAUD0I2" input="" vlaue="0"/>
+                        <item id="INTTAUD0I3" input="" vlaue="0"/>
+                        <item id="INTTAUD0I4" input="" vlaue="0"/>
+                        <item id="INTTAUD0I5" input="" vlaue="0"/>
+                        <item id="INTTAUD0I6" input="" vlaue="0"/>
+                        <item id="INTTAUD0I7" input="" vlaue="0"/>
+                        <item id="INTTAUD0I8" input="" vlaue="0"/>
+                        <item id="INTTAUD0I9" input="" vlaue="0"/>
+                        <item id="INTTAUD0I10" input="" vlaue="0"/>
+                        <item id="INTTAUD0I11" input="" vlaue="0"/>
+                        <item id="INTTAUD0I12" input="" vlaue="0"/>
+                        <item id="INTTAUD0I13" input="" vlaue="0"/>
+                        <item id="INTTAUD0I14" input="" vlaue="0"/>
+                        <item id="INTTAUD0I15" input="" vlaue="0"/>
+                        <item id="INTTAUB0I0" input="" vlaue="0"/>
+                        <item id="INTTAUB0I1" input="" vlaue="0"/>
+                        <item id="INTTAUB0I2" input="" vlaue="0"/>
+                        <item id="INTTAUB0I3" input="" vlaue="0"/>
+                        <item id="INTTAUB0I4" input="" vlaue="0"/>
+                        <item id="INTTAUB0I5" input="" vlaue="0"/>
+                        <item id="INTTAUB0I6" input="" vlaue="0"/>
+                        <item id="INTTAUB0I7" input="" vlaue="0"/>
+                        <item id="INTTAUB0I8" input="" vlaue="0"/>
+                        <item id="INTTAUB0I9" input="" vlaue="0"/>
+                        <item id="INTTAUB0I10" input="" vlaue="0"/>
+                        <item id="INTTAUB0I11" input="" vlaue="0"/>
+                        <item id="INTTAUB0I12" input="" vlaue="0"/>
+                        <item id="INTTAUB0I13" input="" vlaue="0"/>
+                        <item id="INTTAUB0I14" input="" vlaue="0"/>
+                        <item id="INTTAUB0I15" input="" vlaue="0"/>
+                        <item id="INTTAUB1I0" input="" vlaue="0"/>
+                        <item id="INTTAUB1I1" input="" vlaue="0"/>
+                        <item id="INTTAUB1I2" input="" vlaue="0"/>
+                        <item id="INTTAUB1I3" input="" vlaue="0"/>
+                        <item id="INTTAUB1I4" input="" vlaue="0"/>
+                        <item id="INTTAUB1I5" input="" vlaue="0"/>
+                        <item id="INTTAUB1I6" input="" vlaue="0"/>
+                        <item id="INTTAUB1I7" input="" vlaue="0"/>
+                        <item id="INTTAUB1I8" input="" vlaue="0"/>
+                        <item id="INTTAUB1I9" input="" vlaue="0"/>
+                        <item id="INTTAUB1I10" input="" vlaue="0"/>
+                        <item id="INTTAUB1I11" input="" vlaue="0"/>
+                        <item id="INTTAUB1I12" input="" vlaue="0"/>
+                        <item id="INTTAUB1I13" input="" vlaue="0"/>
+                        <item id="INTTAUB1I14" input="" vlaue="0"/>
+                        <item id="INTTAUB1I15" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="transferModeSelection" selection="singleTransfer">
+                        <item id="singleTransfer" input="" vlaue="0"/>
+                        <item id="blockTransfer1" input="" vlaue="0"/>
+                        <item id="blockTransfer2" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="continuousTransferEnable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="dmaCyclesEnable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="sourceAddress" selection="sourceAddressTxt">
+                        <item id="sourceAddressTxt" input="0x00000123" vlaue="291"/>
+                    </option>
+                    <option enabled="true" id="sourceCountDirection" selection="fixed">
+                        <item id="increment" input="" vlaue="0"/>
+                        <item id="decrement" input="" vlaue="0"/>
+                        <item id="fixed" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="destinationAddress" selection="destinationAddressTxt">
+                        <item id="destinationAddressTxt" input="0x00000456" vlaue="1110"/>
+                    </option>
+                    <option enabled="true" id="destinationCountDirection" selection="fixed">
+                        <item id="increment" input="" vlaue="0"/>
+                        <item id="decrement" input="" vlaue="0"/>
+                        <item id="fixed" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="transferCount" selection="transferCountTxt">
+                        <item id="transferCountTxt" input="4" vlaue="4"/>
+                    </option>
+                    <option enabled="true" id="dataSize" selection="8bit">
+                        <item id="8bit" input="" vlaue="0"/>
+                        <item id="16bit" input="" vlaue="0"/>
+                        <item id="32bit" input="" vlaue="0"/>
+                        <item id="64bit" input="" vlaue="0"/>
+                        <item id="128bit" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="addressReloadCount" selection="addressReloadCountTxt">
+                        <item id="addressReloadCountTxt" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="reloadFun1Enable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadfun1Selection" selection="desAddTransferCountReloaded">
+                        <item id="sourAddTransferCountReloaded" input="" vlaue="0"/>
+                        <item id="desAddTransferCountReloaded" input="" vlaue="0"/>
+                        <item id="sourAddDesAddTransferCountReloaded" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="reloadFun2Enable" selection="unchecked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadfun2Selection" selection="sourAddAddReloadCountReloaded">
+                        <item id="sourAddAddReloadCountReloaded" input="" vlaue="0"/>
+                        <item id="desAddAddReloadCountReloaded" input="" vlaue="0"/>
+                        <item id="sourAddDesAddAddReloadCountReloaded" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadSourAdd" selection="reloadSourAddTxt">
+                        <item id="reloadSourAddTxt" input="0x00000000" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadDesAdd" selection="reloadDesAddTxt">
+                        <item id="reloadDesAddTxt" input="0x00000000" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadTransferCount" selection="reloadTransferCountTxt">
+                        <item id="reloadTransferCountTxt" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="reloadAddReloadCount" selection="reloadAddReloadCountTxt">
+                        <item id="reloadAddReloadCountTxt" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="transferCompleteIntEnable" selection="checked">
+                        <item id="checked" input="" vlaue="0"/>
+                        <item id="unchecked" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="intPriority" selection="Level5">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                        <item id="Level4" input="" vlaue="0"/>
+                        <item id="Level5" input="" vlaue="0"/>
+                        <item id="Level6" input="" vlaue="0"/>
+                        <item id="Level7" input="" vlaue="0"/>
+                        <item id="Level8" input="" vlaue="0"/>
+                        <item id="Level9" input="" vlaue="0"/>
+                        <item id="Level10" input="" vlaue="0"/>
+                        <item id="Level11" input="" vlaue="0"/>
+                        <item id="Level12" input="" vlaue="0"/>
+                        <item id="Level13" input="" vlaue="0"/>
+                        <item id="Level14" input="" vlaue="0"/>
+                        <item id="Level15" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+            </allocatable>
+            <component description="The Direct Memory Access (DMA) is function that access data without intervention of the CPU." detailDescription="" display="DMA Controller" id="com.renesas.smc.tools.swcomponent.rh850.dma" version="1.6.0"/>
+            <allocator channelLevel0="0" channelLevel1="0" channelLevel2="" channelLevel3="0" channelLevel4="" channelLevel5="" description="This software allocator provides the function of DMA controller in DMAC00." display="DMAC00" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.dmac.f1kms1s4.dmac00" type="DMAC0">
+                <context/>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+        <configuration apiMode="FULL_API" id="2bc9fa55-17d8-4a37-b96f-9c79fd84b60b" inuse="true" name="Config_STBC">
+            <allocatable id="STBC">
+                <option enabled="true" id="STBCMode" selection="stop">
+                    <item id="stop" input="" vlaue="0"/>
+                    <item id="deepStop" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="TNMI" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP1" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP2" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP3" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP4" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP5" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP6" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP7" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP8" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP9" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP10" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP11" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP12" selection="Enable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP13" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP14" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP15" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP16" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP17" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP18" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP19" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP20" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP21" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP22" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTP23" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="WDTA0NMI" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTWDTA0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ0I0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ0I1" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ0I2" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ0I3" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ2I0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ2I1" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ2I2" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTTAUJ2I3" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTRTCA01S" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTRTCA0AL" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="f1INTRTCA0R" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCANGRECC0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN0REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN1REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN2REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN3REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN4REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN5REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN6REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTRCAN7REC" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTLVIL" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="WUTRG0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="WUTRG1" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTDCUTDI" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="INTKR0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="INTADCA0I0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="INTADCA0I1" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="INTADCA0I2" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ0I0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ0I1" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ0I2" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ0I3" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ2I0" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ2I1" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ2I2" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTTAUJ2I3" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTRTCA01S" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTRTCA0AL" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="f2INTRTCA0R" selection="Disable">
+                    <item id="Enable" input="" vlaue="0"/>
+                    <item id="Disable" input="" vlaue="0"/>
+                </option>
+            </allocatable>
+            <component description="The Stand-By Controller (STBC) is funtion to support standby mode setting." detailDescription="" display="Stand-by Controller" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.stbc" version="1.3.1"/>
+            <allocator channelLevel0="" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="stand-by controller" display="STBC" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.stbc.f1kms4.stbc" type="">
+                <context/>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+        <configuration apiMode="FULL_API" id="f75927f9-85ce-473a-aaa6-57e900033fcc" inuse="true" name="Config_INTC">
             <allocatable id="ICU">
                 <allocatable id="IRQ0">
                     <option enabled="true" id="enableINTP" selection="disable">
@@ -2054,7 +3097,7 @@
                         <item id="enable" input="" vlaue="0"/>
                         <item id="disable" input="" vlaue="0"/>
                     </option>
-                    <option enabled="true" id="intpType" selection="rising">
+                    <option enabled="true" id="intpType" selection="falling">
                         <item id="falling" input="" vlaue="0"/>
                         <item id="rising" input="" vlaue="0"/>
                         <item id="both" input="" vlaue="0"/>
@@ -2435,283 +3478,6 @@
             </allocatable>
             <component description="The Interrupt Controller (INTC) is function that sets request such as non-maskable interrupt(NMI) and external pin interrupts." detailDescription="" display="Interrupt Controller" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.icu" version="1.5.0"/>
             <allocator channelLevel0="" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Interrupt Controller" display="INTC" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.icu" type="">
-                <context/>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
-        </configuration>
-        <configuration apiMode="FULL_API" id="f2a8cd22-8657-4f8a-bbbf-cdfad27fde39" inuse="true" name="Config_STBC">
-            <allocatable id="STBC">
-                <option enabled="true" id="STBCMode" selection="stop">
-                    <item id="stop" input="" vlaue="0"/>
-                    <item id="deepStop" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="TNMI" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP1" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP2" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP3" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP4" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP5" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP6" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP7" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP8" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP9" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP10" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP11" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP12" selection="Enable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP13" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP14" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP15" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP16" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP17" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP18" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP19" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP20" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP21" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP22" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTP23" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="WDTA0NMI" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTWDTA0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ0I0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ0I1" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ0I2" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ0I3" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ2I0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ2I1" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ2I2" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTTAUJ2I3" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTRTCA01S" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTRTCA0AL" selection="Enable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="f1INTRTCA0R" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCANGRECC0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN0REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN1REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN2REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN3REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN4REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN5REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN6REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTRCAN7REC" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTLVIL" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="WUTRG0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="WUTRG1" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTDCUTDI" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTKR0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="INTADCA0I0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="INTADCA0I1" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="INTADCA0I2" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ0I0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ0I1" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ0I2" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ0I3" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ2I0" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ2I1" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ2I2" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTTAUJ2I3" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTRTCA01S" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTRTCA0AL" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="f2INTRTCA0R" selection="Disable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-            </allocatable>
-            <component description="The Stand-By Controller (STBC) is funtion to support standby mode setting." detailDescription="" display="Stand-by Controller" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.stbc" version="1.3.1"/>
-            <allocator channelLevel0="" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="stand-by controller" display="STBC" id="com.renesas.smc.tools.swcomponent.codegenerator.rh850.stbc.f1kms4.stbc" type="">
                 <context/>
             </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>

@@ -64,14 +64,10 @@ void R_Config_RTCA0_Create(void)
     /* Disable RTC interrupt (INTRTCA01S) operation and clear request */
     INTC2.ICRTCA01S.BIT.MKRTCA01S = _INT_PROCESSING_DISABLED;
     INTC2.ICRTCA01S.BIT.RFRTCA01S = _INT_REQUEST_NOT_OCCUR;
-    /* Set INTRTCA0AL direct/table method */
-    INTC2.ICRTCA0AL.BIT.TBRTCA0AL = _INT_TABLE_VECTOR;
-    /* Set INTRTCA0AL priority */
-    INTC2.ICRTCA0AL.UINT16 &= _INT_PRIORITY_HIGHEST;
     /* Set RTC operation setting */
     RTCA0.CTL0.BIT.AMPM = _RTC_COUNTER_FORMAT_24;
     RTCA0.CTL0.BIT.SLSB = _RTC_OPERATION_MODE_FREQUENCY;
-    RTCA0.CTL1.UINT8 = _RTC_OUTPUT_1HZ_DISABLE | _RTC_INT_ALARM_ENABLE | _RTC_INT_1SECOND_DISABLE | 
+    RTCA0.CTL1.UINT8 = _RTC_OUTPUT_1HZ_DISABLE | _RTC_INT_ALARM_DISABLE | _RTC_INT_1SECOND_DISABLE | 
                        _RTC_INTERVAL_INT_DISABLE;
     /* Set counter overflow value */
     RTCA0.SCMP = _RTC_SUB_COUNTER_COMPARE_VALUE;
@@ -83,12 +79,6 @@ void R_Config_RTCA0_Create(void)
     RTCA0.HOUR = _RTC_COUNTER_HOUR;
     RTCA0.MIN = _RTC_COUNTER_MIN;
     RTCA0.SEC = _RTC_COUNTER_SEC;
-    /* Set alarm clock */
-    RTCA0.ALM = _RTC_ALARM_MIN;
-    RTCA0.ALH = _RTC_ALARM_HOUR;
-    RTCA0.ALW = _RTC_ALARM_SATURDAY_DISABLE | _RTC_ALARM_FRIDAY_DISABLE | _RTC_ALARM_THURSDAY_DISABLE | 
-                _RTC_ALARM_WEDNESDAY_DISABLE | _RTC_ALARM_TUESDAY_DISABLE | _RTC_ALARM_MONDAY_DISABLE | 
-                _RTC_ALARM_SUNDAY_DISABLE;
     /* Synchronization processing */
     g_cg_sync_read = RTCA0.CTL0.UINT8;
     __syncp();
@@ -105,9 +95,6 @@ void R_Config_RTCA0_Create(void)
 void R_Config_RTCA0_Start(void)
 {
     volatile uint32_t w_count;
-    /* Clear RTC interrupt (INTRTCA0AL) request and enable operation */
-    INTC2.ICRTCA0AL.BIT.RFRTCA0AL = _INT_REQUEST_NOT_OCCUR;
-    INTC2.ICRTCA0AL.BIT.MKRTCA0AL = _INT_PROCESSING_ENABLED;
     /* Start counter operation */
     RTCA0.CTL0.BIT.CE = _RTC_COUNTER_START;
     /* Change the waiting time according to the system */
@@ -129,9 +116,6 @@ void R_Config_RTCA0_Stop(void)
 
     /* Stop counter operation */
     RTCA0.CTL0.BIT.CE = _RTC_COUNTER_STOP;
-    /* Disable RTC interrupt (INTRTCA0AL) operation and clear request */
-    INTC2.ICRTCA0AL.BIT.MKRTCA0AL = _INT_PROCESSING_DISABLED;
-    INTC2.ICRTCA0AL.BIT.RFRTCA0AL = _INT_REQUEST_NOT_OCCUR;
     /* Synchronization processing */
     g_cg_sync_read = RTCA0.CTL0.UINT8;
     __syncp();
@@ -504,19 +488,10 @@ MD_STATUS R_Config_RTCA0_Set_SubCounterCompareValue(uint32_t const subcompare_wr
 ***********************************************************************************************************************/
 void R_Config_RTCA0_Set_AlarmValue(rtc_alarm_value_t alarm_val)
 {
-    /* Disable alarm interrupt */
-    RTCA0.CTL1.BIT.ENALM = _RTC_INT_DISABLE;
-    /* Disable RTC interrupt (INTRTCA0AL) operation */
-    INTC2.ICRTCA0AL.BIT.MKRTCA0AL = _INT_PROCESSING_DISABLED;
     /* Set alarm clock */
     RTCA0.ALM = alarm_val.alarmwm;
     RTCA0.ALH = alarm_val.alarmwh;
     RTCA0.ALW = alarm_val.alarmww;
-    /* Clear RTC interrupt (INTRTCA0AL) request and enable operation */
-    INTC2.ICRTCA0AL.BIT.RFRTCA0AL = _INT_REQUEST_NOT_OCCUR;
-    INTC2.ICRTCA0AL.BIT.MKRTCA0AL = _INT_PROCESSING_ENABLED;
-    /* Enable alarm interrupt */
-    RTCA0.CTL1.BIT.ENALM = _RTC_INT_ENABLE;
 }
 
 /***********************************************************************************************************************

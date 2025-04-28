@@ -35,7 +35,6 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_userdefine.h"
 #include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
 /* Start user code for include. Do not edit comment generated here */
 #include "state_machine.h"
 /* End user code. Do not edit comment generated here */
@@ -44,6 +43,7 @@ Includes
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+#include "r_cg_port.h"
 extern Event_t g_event;
 extern StateMachine_t g_StateMachine;
 /* End user code. Do not edit comment generated here */

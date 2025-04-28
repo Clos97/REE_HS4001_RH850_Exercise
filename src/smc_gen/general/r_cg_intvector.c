@@ -167,7 +167,7 @@ extern void eiint58(void);
 /* RLIN21 interrupt; */
 extern void eiint59(void);
 /* DMA00 transfer completion; */
-extern void eiint60(void);
+extern void r_Config_DMAC00_dmac00_interrupt(void);
 /* DMA01 transfer completion; */
 extern void eiint61(void);
 /* DMA02 transfer completion; */
@@ -467,7 +467,7 @@ extern void eiint208(void);
 /* RTCA0 1-second interval interrupt; */
 extern void eiint209(void);
 /* RTCA0 alarm interrupt; */
-extern void r_Config_RTCA0_interrupt_alarm(void);
+extern void eiint210(void);
 /* RTCA0 fixed interval interrupt; */
 extern void eiint211(void);
 /* ADCA1 error interrupt; */
@@ -924,7 +924,7 @@ void * const INT_Vectors[] = {
     /* RLIN21 interrupt; */
     (void *)eiint59,
     /* DMA00 transfer completion; */
-    (void *)eiint60,
+    (void *)r_Config_DMAC00_dmac00_interrupt,
     /* DMA01 transfer completion; */
     (void *)eiint61,
     /* DMA02 transfer completion; */
@@ -1224,7 +1224,7 @@ void * const INT_Vectors[] = {
     /* RTCA0 1-second interval interrupt; */
     (void *)eiint209,
     /* RTCA0 alarm interrupt; */
-    (void *)r_Config_RTCA0_interrupt_alarm,
+    (void *)eiint210,
     /* RTCA0 fixed interval interrupt; */
     (void *)eiint211,
     /* ADCA1 error interrupt; */
