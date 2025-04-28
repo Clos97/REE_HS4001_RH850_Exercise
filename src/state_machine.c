@@ -291,7 +291,7 @@ static void State_Sleep(void) {
 		}
 
 		g_alarmValue.alarmww = 0x00; // No Weekday specified
-		// Set the new alarm Value
+		// Set the new alarm Value -> TODO: Alarm Not Working yet
 		R_Config_RTCA0_Set_AlarmValue(g_alarmValue);
 
 		R_Config_RTCA0_Set_AlarmOn();
