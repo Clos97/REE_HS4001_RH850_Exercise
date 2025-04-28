@@ -43,6 +43,9 @@ Includes
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+
+#define SENSOR_SLAVE_ADDRESS	(0x44)
+
 // Globale State Machine Instanz
 StateMachine_t g_StateMachine;
 
@@ -56,6 +59,7 @@ uint8_t g_useStateMachine = 1U; // Turn on the state machine -> Off for testing 
 extern uint8_t uart_isr_status_flag_send_complete;
 TemperatureMeasurement g_temp_measurement;
 rtc_counter_value_t g_rtc_value;
+
 /* End user code. Do not edit comment generated here */
 void r_main_userinit(void);
 
@@ -69,7 +73,6 @@ void main(void)
 {
     r_main_userinit();
     /* Start user code for main. Do not edit comment generated here */
-
     if(g_useStateMachine == 1U)
     {
 		// Init the state machine

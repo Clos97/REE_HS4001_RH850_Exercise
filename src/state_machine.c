@@ -105,7 +105,6 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
     	return;
     }
 
-    //TODO: Implement this -> default values
     switch (sm->currentState) {
         case STATE_INIT:
             if (event == EVT_SYSTEM_READY) {
@@ -177,6 +176,8 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
         default:
             break;
     } // end switch-case
+
+
 } // end StateMachine_HandleEvent
 
 // ===============================
@@ -192,7 +193,7 @@ static void State_Init(void) {
 
 
     // Start I2C Peripheral
-    //R_Config_RIIC0_Start();
+    R_Config_RIIC0_Start();
 
     // Start Communication via UART
     R_Config_UART0_Start();
@@ -239,10 +240,23 @@ static void State_ReadSensor(void) {
     // Toggle the LED
     //PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
 
+    // Temperature & humidity measurement
+    start_measurement(&g_temp_measurement);
 
-    // Currently we are just placing dummy values -> TODO
-    g_temp_measurement.temperature_celsius 	= 22.83;
-    g_temp_measurement.relative_humidity	= 94.8;
+    switch(g_temp_measurement.status)
+    {
+		case TEMP_STATE_DATA_VALID:
+			break; // just continue
+		case TEMP_STATE_DATA_INVALID:
+			g_event = EVT_SENSOR_READ_FAIL;
+			return;
+		case TEMP_CNT_OVERFLOW:
+			g_event = EVT_ERROR_DETECTED;
+			return;
+    }
+
+	calc_humidity(&g_temp_measurement);
+	calc_temperature(&g_temp_measurement);
 
     // get timestamp
     R_Config_RTCA0_Get_CounterBufferValue(&g_rtc_value);

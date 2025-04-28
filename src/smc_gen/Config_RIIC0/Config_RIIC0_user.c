@@ -52,6 +52,7 @@ extern volatile uint16_t         g_riic0_rx_length;               /* RIIC0 recei
 extern volatile uint8_t          g_riic0_stop_generation;         /* RIIC0 stop condition generation flag */
 /* Start user code for global. Do not edit comment generated here */
 volatile uint8_t 				i2c_transmit_flag = 0;
+volatile uint8_t				i2c_receive_flag = 0;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -88,7 +89,8 @@ void r_Config_RIIC0_callback_transmitend(void)
 void r_Config_RIIC0_callback_receiveend(void)
 {
     /* Start user code for r_Config_RIIC0_callback_receiveend. Do not edit comment generated here */
-    /* End user code. Do not edit comment generated here */
+	i2c_receive_flag = 1;
+	/* End user code. Do not edit comment generated here */
 }
 
 /***********************************************************************************************************************
