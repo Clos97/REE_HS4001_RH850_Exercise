@@ -43,6 +43,9 @@ Includes
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+
+#define SENSOR_SLAVE_ADDRESS	(0x44)
+
 // Globale State Machine Instanz
 StateMachine_t g_StateMachine;
 
@@ -56,9 +59,6 @@ uint8_t g_useStateMachine = 0U; // Turn on the state machine -> Off for testing 
 extern uint8_t uart_isr_status_flag_send_complete;
 TemperatureMeasurement g_temp_measurement;
 rtc_counter_value_t g_rtc_value;
-char g_tx_buf1[UART_BUFFER_SIZE];
-
-uint8_t len = 0;
 /* End user code. Do not edit comment generated here */
 void r_main_userinit(void);
 
@@ -72,42 +72,6 @@ void main(void)
 {
     r_main_userinit();
     /* Start user code for main. Do not edit comment generated here */
-
-    R_Systeminit();
-	EI();
-
-	// Start Communication via UART
-	R_Config_UART0_Start();
-
-
-
-
-
-	len = sprintf(g_tx_buf1,"Hallo Welt!\r\n");
-
-	err = R_Config_UART0_Send(g_tx_buf1, len);
-
-	while(uart_isr_status_flag_send_complete != 1);
-
-	R_Config_TAUB0_0_Start();
-
-	PDMA0.DSA0 = (uint8_t *) &g_tx_buf1[0];
-	PDMA0.DDA0 = (uint8_t *) &RLN30.LUTDR; // 0xFFCE2000 + 0x24
-	PDMA0.DTC0 = 1; // Transfer Count
-
-	R_Config_DMAC00_Start();
-
-	R_Config_DMAC00_Set_SoftwareTrigger();
-
-	while(1){
-
-	}
-
-
-
-
-	// Write to the tx_buf
-
     if(g_useStateMachine == 1U)
     {
 		// Init the state machine

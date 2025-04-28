@@ -78,6 +78,7 @@ void uart_send_log_humidity_and_temperature(TemperatureMeasurement measurement)
 	    "+-------------------------------+\r\n",
 	    measurement.timestamp, measurement.temperature_celsius, measurement.relative_humidity);
 
+
 	// Only sent the real length
 	err = R_Config_UART0_Send(g_tx_buf1, length);
 
@@ -91,5 +92,4 @@ void uart_send_log_humidity_and_temperature(TemperatureMeasurement measurement)
 	while(uart_isr_status_flag_send_complete != 1);
 
 	uart_isr_status_flag_send_complete = 0;
-
 }

@@ -12,7 +12,7 @@
 #include "r_cg_macrodriver.h"
 #include "temperature_reading.h"
 
-#define UART_BUFFER_SIZE (100U)
+#define UART_BUFFER_SIZE (120U)
 
 extern Event_t g_event;
 extern uint8_t uart_isr_status_flag_send_complete;
