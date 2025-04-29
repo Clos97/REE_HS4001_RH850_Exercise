@@ -39,9 +39,7 @@ Macro definitions (Register bit)
 /***********************************************************************************************************************
 Macro definitions
 ***********************************************************************************************************************/
-#define _PORT_PM0_DEFAULT_VALUE                   (0x8000U) /* PM0 default value */
 #define _PORT_PM8_DEFAULT_VALUE                   (0xE000U) /* PM8 default value */
-#define _PORT_PIS0_DEFAULT_VALUE                  (0x8000U) /* PIS0 default value */
 #define _PORT_PIS8_DEFAULT_VALUE                  (0xE000U) /* PIS8 default value */
 
 /***********************************************************************************************************************

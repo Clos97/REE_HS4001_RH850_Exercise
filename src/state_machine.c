@@ -212,12 +212,13 @@ static void State_Init(void) {
     g_rtc_value.sec		=	0;
 
     R_Config_RTCA0_Set_CounterValue(g_rtc_value);
+
     // Internal Interrupt INT12
     R_Config_INTC_INTP12_Start();
 
 
     // Prepare the Stop mode -> Stand by Controller
-    //R_Config_STBC_Prepare_Stop_Mode(); // This is not working
+    R_Config_STBC_Prepare_Stop_Mode();
 
     EI();
 

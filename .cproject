@@ -45,14 +45,13 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RIIC0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_1}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_UART0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RTCA0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_INTC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_STBC}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_DMAC00}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
 								</option>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization.1173739738" name="Level of optimization (-O)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization.Onothing" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization.1173739738" name="Level of optimization (-O)" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.option.optimization.default" valueType="enumerated"/>
 								<inputType id="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.C.inputType.1601211884" name="Compiler InputType" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.compiler.C.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrh.exe.hardwaredebug.assembler.1224200501" name="Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.exe.hardwaredebug.assembler">
@@ -64,12 +63,11 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RIIC0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_TAUB0_1}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_UART0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_RTCA0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_INTC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_STBC}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_DMAC00}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/smc_gen/Config_PORT}&quot;"/>
 								</option>
 								<inputType id="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.inputType.1639698406" name="Assembler InputType" superClass="com.renesas.cdt.managedbuild.renesas.ccrh.assembler.inputType"/>
 							</tool>

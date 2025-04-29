@@ -36,13 +36,12 @@ Includes
 #include "r_cg_userdefine.h"
 #include "Config_RIIC0.h"
 #include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
 #include "Config_TAUB0_1.h"
 #include "Config_UART0.h"
 #include "Config_RTCA0.h"
-#include "Config_DMAC00.h"
 #include "Config_STBC.h"
 #include "Config_INTC.h"
+#include "Config_PORT.h"
 #include "r_cg_cgc.h"
 /* Start user code for include. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
@@ -69,6 +68,5 @@ void R_Systeminit(void)
     R_Config_TAUB0_1_Create();
     R_Config_UART0_Create();
     R_Config_RTCA0_Create();
-    R_Config_DMAC00_Create();
     R_Config_INTC_Create();
 }

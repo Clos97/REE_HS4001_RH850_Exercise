@@ -167,7 +167,7 @@ extern void eiint58(void);
 /* RLIN21 interrupt; */
 extern void eiint59(void);
 /* DMA00 transfer completion; */
-extern void r_Config_DMAC00_dmac00_interrupt(void);
+extern void eiint60(void);
 /* DMA01 transfer completion; */
 extern void eiint61(void);
 /* DMA02 transfer completion; */
@@ -924,7 +924,7 @@ void * const INT_Vectors[] = {
     /* RLIN21 interrupt; */
     (void *)eiint59,
     /* DMA00 transfer completion; */
-    (void *)r_Config_DMAC00_dmac00_interrupt,
+    (void *)eiint60,
     /* DMA01 transfer completion; */
     (void *)eiint61,
     /* DMA02 transfer completion; */

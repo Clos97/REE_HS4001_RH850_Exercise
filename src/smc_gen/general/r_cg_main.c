@@ -73,6 +73,7 @@ void main(void)
 {
     r_main_userinit();
     /* Start user code for main. Do not edit comment generated here */
+
     if(g_useStateMachine == 1U)
     {
 		// Init the state machine
@@ -112,6 +113,7 @@ void r_main_userinit(void)
     /* Start user code for r_main_userinit. Do not edit comment generated here */
     /* End user code. Do not edit comment generated here */
 }
+
 
 
 /* Start user code for adding. Do not edit comment generated here */

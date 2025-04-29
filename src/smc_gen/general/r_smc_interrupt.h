@@ -99,7 +99,7 @@ Macro definitions
 #define INTC_CSIG0_INTCSIG0IRE_PRIORITY                        _INT_PRIORITY_15
 #define INTC_RLIN240_INTRLIN20_PRIORITY                        _INT_PRIORITY_15
 #define INTC_RLIN240_INTRLIN21_PRIORITY                        _INT_PRIORITY_15
-#define INTC_PDMA0_INTDMA0_PRIORITY                            _INT_PRIORITY_5
+#define INTC_PDMA0_INTDMA0_PRIORITY                            _INT_PRIORITY_15
 #define INTC_PDMA0_INTDMA1_PRIORITY                            _INT_PRIORITY_15
 #define INTC_PDMA0_INTDMA2_PRIORITY                            _INT_PRIORITY_15
 #define INTC_PDMA0_INTDMA3_PRIORITY                            _INT_PRIORITY_15
@@ -155,7 +155,7 @@ Macro definitions
 #define INTC_PORT_INTP6_PRIORITY                               _INT_PRIORITY_15
 #define INTC_PORT_INTP7_PRIORITY                               _INT_PRIORITY_15
 #define INTC_PORT_INTP8_PRIORITY                               _INT_PRIORITY_15
-#define INTC_PORT_INTP12_PRIORITY                              _INT_PRIORITY_4
+#define INTC_PORT_INTP12_PRIORITY                              _INT_PRIORITY_10
 #define INTC_CSIH2_INTCSIH2IC_PRIORITY                         _INT_PRIORITY_15
 #define INTC_TAUD0_INTTAUD0I0_2_PRIORITY                       _INT_PRIORITY_15
 #define INTC_CSIH2_INTCSIH2IR_PRIORITY                         _INT_PRIORITY_15
