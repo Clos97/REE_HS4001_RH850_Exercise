@@ -43,6 +43,7 @@ Includes
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+#include "r_cg_port.h"
 extern Event_t g_event;
 extern StateMachine_t g_StateMachine;
 /* End user code. Do not edit comment generated here */
@@ -70,9 +71,10 @@ void r_Config_TAUB0_0_interrupt(void)
 {
     /* Start user code for r_Config_TAUB0_0_interrupt. Do not edit comment generated here */
 	// Only raise the event, when the controller is ready for it
-	if(g_StateMachine.currentState == STATE_IDLE)
+	if(g_StateMachine.currentState == STATE_IDLE && g_event == EVT_NONE)
 	{
 		g_event = EVT_TIMER_ELAPSED;
+		PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
 	}
 	/* End user code. Do not edit comment generated here */
 }

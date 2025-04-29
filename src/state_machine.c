@@ -23,6 +23,7 @@ static void State_Error(void);
 extern Event_t g_event;
 extern TemperatureMeasurement g_temp_measurement;
 extern rtc_counter_value_t g_rtc_value;
+rtc_alarm_value_t g_alarmValue = 0;
 // ===============================
 // Internal: Function Table for State Execution
 // ===============================
@@ -99,6 +100,7 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
     // The state doesn't matter if an error occures
     if(event == EVT_ERROR_DETECTED)
     {
+    	uart_send_state_transition(sm->currentState, STATE_ERROR);
     	sm->currentState = STATE_ERROR;
     	return;
     }
@@ -112,11 +114,16 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
             break;
 
         case STATE_IDLE:
-        	if(event = EVT_TIMER_ELAPSED)
+        	if(event == EVT_TIMER_ELAPSED)
         	{
         		uart_send_state_transition(sm->currentState, STATE_READ_SENSOR);
         		sm->currentState = STATE_READ_SENSOR;
         	}
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				sm->currentState = STATE_SLEEP;
+			}
             break;
 
         case STATE_READ_SENSOR:
@@ -124,16 +131,41 @@ void StateMachine_HandleEvent(StateMachine_t* sm, Event_t event) {
         		uart_send_state_transition(sm->currentState, STATE_SEND_LOG_UART);
         		sm->currentState = STATE_SEND_LOG_UART;
         	}
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				sm->currentState = STATE_SLEEP;
+			}
             break;
         case STATE_SEND_LOG_UART:
         	if(event == EVT_UART_SEND_COMPLETE){
 				uart_send_state_transition(sm->currentState, STATE_IDLE);
 				sm->currentState = STATE_IDLE;
 			}
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_SLEEP);
+				sm->currentState = STATE_SLEEP;
+			}
         	break;
         case STATE_SLEEP:
+        	if(event == EVT_BUTTON_PRESS)
+			{
+				uart_send_state_transition(sm->currentState, STATE_WAKEUP);
+				sm->currentState = STATE_WAKEUP;
+			}
+        	if(event == EVT_RTC_ALARM)
+			{
+				uart_send_state_transition(sm->currentState, STATE_WAKEUP);
+				sm->currentState = STATE_WAKEUP;
+			}
+
         	break;
         case STATE_WAKEUP:
+        	if(event == EVT_SYSTEM_READY)
+        	{
+        		sm->currentState = STATE_IDLE;
+        	}
         	break;
         case STATE_ERROR:
             if (event == EVT_RESET) {
@@ -172,24 +204,21 @@ static void State_Init(void) {
     // Enable RTC
     R_Config_RTCA0_Start();
 
-    g_rtc_value.day 	= 	15;
-    g_rtc_value.month 	= 	4;
-    g_rtc_value.year 	=	2025;
-    g_rtc_value.hour	=	13;
-    g_rtc_value.min		=	35;
-    g_rtc_value.sec		=	0;
+    g_rtc_value.hour	=	bin_to_bcd(13);
+    g_rtc_value.min		=	bin_to_bcd(17);
+    g_rtc_value.sec		=	bin_to_bcd(0);
 
     R_Config_RTCA0_Set_CounterValue(g_rtc_value);
 
+    // Internal Interrupt INT12
+    R_Config_INTC_INTP12_Start();
 
-    // Init DMA -> TODO
 
+    // Prepare the Stop mode -> Stand by Controller
+    R_Config_STBC_Prepare_Stop_Mode();
 
-
-    R_Config_DMAC00_Start();
-
-    // Enable all Interrupts
     EI();
+
     // When init is successful -> Raise an event
     g_event = EVT_SYSTEM_READY;
 }
@@ -207,7 +236,7 @@ static void State_Idle(void) {
 static void State_ReadSensor(void) {
 
     // Toggle the LED
-    PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
+    //PORT.P8 = (PORT.P8 ==_PORT_Pn5_OUTPUT_LOW)?_PORT_Pn5_OUTPUT_HIGH:_PORT_Pn5_OUTPUT_LOW;
 
     // Temperature & humidity measurement
     start_measurement(&g_temp_measurement);
@@ -230,9 +259,9 @@ static void State_ReadSensor(void) {
     // get timestamp
     R_Config_RTCA0_Get_CounterBufferValue(&g_rtc_value);
 
-    sprintf(g_temp_measurement.timestamp, "%02d:%02d:%02d", g_rtc_value.hour, g_rtc_value.min, g_rtc_value.sec);
+    sprintf(g_temp_measurement.timestamp, "%02d:%02d:%02d", bcd_to_bin(g_rtc_value.hour), bcd_to_bin(g_rtc_value.min), bcd_to_bin(g_rtc_value.sec));
 
-    g_event = EVT_SENSOR_READ_SUCCESS;
+    g_event = (g_event == EVT_NONE)?EVT_SENSOR_READ_SUCCESS:g_event; // Only assign if meanwhile a error or button press didn't occure
 }
 
 /**
@@ -241,23 +270,78 @@ static void State_ReadSensor(void) {
 static void State_UartLog(void) {
 
     // Waiting for an action (e.g. user input or external trigger)
-	uart_send_log_humidity_and_temperature(g_temp_measurement); // TODO: The program gets stuck in here
-	g_event = EVT_UART_SEND_COMPLETE;
+	uart_send_log_humidity_and_temperature(g_temp_measurement);
+	g_event = (g_event == EVT_NONE)?EVT_UART_SEND_COMPLETE:g_event; // Only assign if meanwhile a error or button press didn't occure
 }
 
 /**
  * @brief Logic for the SLEEP state.
  */
 static void State_Sleep(void) {
+		// Stop the interval Timer
+		//R_Config_TAUB0_0_Stop(); -> Should be turned off anyways
 
-    // Waiting for an action (e.g. user input or external trigger)
+		// Turn the LED OFF -> save more power
+		PORT.P8 = _PORT_Pn5_OUTPUT_LOW;
+
+		// Define RTC Alarm Time in 1 minute
+
+		// get timestamp
+		R_Config_RTCA0_Get_CounterBufferValue(&g_rtc_value);
+		R_Config_RTCA0_Get_AlarmValue(&g_alarmValue);
+
+		// Add 1 minute to the BCD time
+		if (g_rtc_value.min == 0x59)
+		{
+		    // Reset minutes to 00 and increment hour (with BCD correction)
+		    g_alarmValue.alarmwm = 0x00;
+
+		    if ((g_rtc_value.hour & 0x0F) < 9) {
+		        g_alarmValue.alarmwh = g_rtc_value.hour + 0x01;
+		    } else {
+		        g_alarmValue.alarmwh = (g_rtc_value.hour & 0xF0) + 0x10;
+		    }
+
+		    // Optional: handle overflow from 0x23 → 0x00 if nötig
+		    if (g_alarmValue.alarmwh == 0x24) {
+		        g_alarmValue.alarmwh = 0x00;
+		    }
+		}
+		else
+		{
+		    // BCD Minute Addition (inline)
+		    if ((g_rtc_value.min & 0x0F) < 9) {
+		        g_alarmValue.alarmwm = g_rtc_value.min + 0x01;
+		    } else {
+		        g_alarmValue.alarmwm = (g_rtc_value.min & 0xF0) + 0x10;
+		    }
+
+		    g_alarmValue.alarmwh = g_rtc_value.hour;
+		}
+
+
+		//g_alarmValue.alarmww = 0x7f; // No Weekday specified
+		// Set the new alarm Value -> TODO: Alarm Not Working yet
+		R_Config_RTCA0_Set_AlarmValue(g_alarmValue);
+
+
+		R_Config_RTCA0_Set_AlarmOn();
+
+		// Enter LPM
+		R_Config_STBC_Start_Stop_Mode();
+
 }
 
 /**
  * @brief Logic for the WAKEUP state.
  */
 static void State_WakeUp(void) {
-    // Waiting for an action (e.g. user input or external trigger)
+	// Turn RTC Alarm Off
+	R_Config_RTCA0_Set_AlarmOff();
+    // Start the Interval Timer again
+	//R_Config_TAUB0_0_Start();
+
+	g_event = EVT_SYSTEM_READY;
 }
 
 /**

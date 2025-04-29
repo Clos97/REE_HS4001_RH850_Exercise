@@ -51,6 +51,16 @@ Global variables and functions
 ***********************************************************************************************************************/
 void R_Pins_Create(void)
 {
+    /* Set INTP12(P0_9) pin */
+    PORT.PIBC0 &= _PORT_CLEAR_BIT9;
+    PORT.PBDC0 &= _PORT_CLEAR_BIT9;
+    PORT.PM0 |= _PORT_SET_BIT9;
+    PORT.PMC0 &= _PORT_CLEAR_BIT9;
+    PORT.PFC0 &= _PORT_CLEAR_BIT9;
+    PORT.PFCE0 &= _PORT_CLEAR_BIT9;
+    PORT.PFCAE0 &= _PORT_CLEAR_BIT9;
+    PORT.PMC0 |= _PORT_SET_BIT9;
+
     /* Set RIIC0SCL(P0_12) pin */
     PORT.PIBC0 &= _PORT_CLEAR_BIT12;
     PORT.PBDC0 &= _PORT_CLEAR_BIT12;

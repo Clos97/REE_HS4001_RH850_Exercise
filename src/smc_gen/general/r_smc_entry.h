@@ -32,12 +32,12 @@ Includes
 #include "r_smc_interrupt.h"
 #include "Config_RIIC0.h"
 #include "Config_TAUB0_0.h"
-#include "Config_PORT.h"
 #include "Config_TAUB0_1.h"
 #include "Config_UART0.h"
 #include "Config_RTCA0.h"
-#include "Config_DMAC00.h"
-#include "r_cg_dma_common.h"
+#include "Config_STBC.h"
+#include "Config_INTC.h"
+#include "Config_PORT.h"
 #include "r_cg_cgc.h"
 
 #ifndef SMC_ENTRY_H

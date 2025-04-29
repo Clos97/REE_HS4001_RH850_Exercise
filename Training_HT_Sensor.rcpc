@@ -7,6 +7,9 @@
   </Placeholders>
   <Project Name="Training_HT_Sensor" Type="Application">
     <Files>
+      <Category Name="output">
+        <Path>output\report_20250428_152622.pdf</Path>
+      </Category>
       <Category Name="src">
         <Path>src\UART_Functions.c</Path>
         <Path>src\UART_Functions.h</Path>
@@ -18,10 +21,10 @@
         <Path>src\temperature_reading.c</Path>
         <Path>src\temperature_reading.h</Path>
         <Category Name="smc_gen">
-          <Category Name="Config_DMAC00">
-            <Path>src\smc_gen\Config_DMAC00\Config_DMAC00.c</Path>
-            <Path>src\smc_gen\Config_DMAC00\Config_DMAC00.h</Path>
-            <Path>src\smc_gen\Config_DMAC00\Config_DMAC00_user.c</Path>
+          <Category Name="Config_INTC">
+            <Path>src\smc_gen\Config_INTC\Config_INTC.c</Path>
+            <Path>src\smc_gen\Config_INTC\Config_INTC.h</Path>
+            <Path>src\smc_gen\Config_INTC\Config_INTC_user.c</Path>
           </Category>
           <Category Name="Config_PORT">
             <Path>src\smc_gen\Config_PORT\Config_PORT.c</Path>
@@ -37,6 +40,11 @@
             <Path>src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
             <Path>src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
             <Path>src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+          </Category>
+          <Category Name="Config_STBC">
+            <Path>src\smc_gen\Config_STBC\Config_STBC.c</Path>
+            <Path>src\smc_gen\Config_STBC\Config_STBC.h</Path>
+            <Path>src\smc_gen\Config_STBC\Config_STBC_user.c</Path>
           </Category>
           <Category Name="Config_TAUB0_0">
             <Path>src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
@@ -57,15 +65,14 @@
             <Path>src\smc_gen\general\r_cg_cgc.c</Path>
             <Path>src\smc_gen\general\r_cg_cgc.h</Path>
             <Path>src\smc_gen\general\r_cg_cgc_user.c</Path>
-            <Path>src\smc_gen\general\r_cg_dma.h</Path>
-            <Path>src\smc_gen\general\r_cg_dma_common.c</Path>
-            <Path>src\smc_gen\general\r_cg_dma_common.h</Path>
+            <Path>src\smc_gen\general\r_cg_intc.h</Path>
             <Path>src\smc_gen\general\r_cg_intvector.c</Path>
             <Path>src\smc_gen\general\r_cg_macrodriver.h</Path>
             <Path>src\smc_gen\general\r_cg_main.c</Path>
             <Path>src\smc_gen\general\r_cg_port.h</Path>
             <Path>src\smc_gen\general\r_cg_riic.h</Path>
             <Path>src\smc_gen\general\r_cg_rtc.h</Path>
+            <Path>src\smc_gen\general\r_cg_stbc.h</Path>
             <Path>src\smc_gen\general\r_cg_systeminit.c</Path>
             <Path>src\smc_gen\general\r_cg_taub.h</Path>
             <Path>src\smc_gen\general\r_cg_uart.h</Path>
@@ -82,179 +89,357 @@
         </Category>
       </Category>
       <Category Name="trash">
-        <Category Name="2025-04-25-12-54-32">
+        <Category Name="2025-04-29-09-54-11">
           <Category Name="src">
             <Category Name="smc_gen">
+              <Category Name="Config_INTC">
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_INTC\Config_INTC.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_INTC\Config_INTC.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_INTC\Config_INTC_user.c</Path>
+              </Category>
               <Category Name="Config_PORT">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_PORT\Config_PORT.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_PORT\Config_PORT.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_PORT\Config_PORT.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_PORT\Config_PORT.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
               </Category>
               <Category Name="Config_RIIC0">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
               </Category>
               <Category Name="Config_RTCA0">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+              </Category>
+              <Category Name="Config_STBC">
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_STBC\Config_STBC.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_STBC\Config_STBC.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_STBC\Config_STBC_user.c</Path>
               </Category>
               <Category Name="Config_TAUB0_0">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
               </Category>
               <Category Name="Config_TAUB0_1">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
               </Category>
               <Category Name="Config_UART0">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_UART0\Config_UART0.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_UART0\Config_UART0.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_UART0\Config_UART0.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_UART0\Config_UART0.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
               </Category>
               <Category Name="general">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_cgc.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_cgc.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_cgc_user.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_intvector.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_macrodriver.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_main.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_port.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_riic.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_rtc.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_systeminit.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_taub.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_uart.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_userdefine.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_smc_entry.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_smc_interrupt.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_smc_interrupt.h</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\general\r_smc_intprg.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_cgc.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_cgc.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_cgc_user.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_intc.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_intvector.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_macrodriver.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_main.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_port.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_riic.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_rtc.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_stbc.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_systeminit.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_taub.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_uart.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_userdefine.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_smc_entry.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_smc_interrupt.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_smc_interrupt.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\general\r_smc_intprg.c</Path>
               </Category>
               <Category Name="r_pincfg">
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\r_pincfg\Pin.c</Path>
-                <Path>trash\2025-04-25-12-54-32\src\smc_gen\r_pincfg\Pin.h</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\r_pincfg\Pin.c</Path>
+                <Path>trash\2025-04-29-09-54-11\src\smc_gen\r_pincfg\Pin.h</Path>
               </Category>
             </Category>
           </Category>
         </Category>
-        <Category Name="2025-04-25-13-19-57">
+        <Category Name="2025-04-29-09-56-34">
           <Category Name="src">
             <Category Name="smc_gen">
+              <Category Name="Config_INTC">
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_INTC\Config_INTC.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_INTC\Config_INTC.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_INTC\Config_INTC_user.c</Path>
+              </Category>
               <Category Name="Config_PORT">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_PORT\Config_PORT.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_PORT\Config_PORT.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_PORT\Config_PORT.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_PORT\Config_PORT.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
               </Category>
               <Category Name="Config_RIIC0">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
               </Category>
               <Category Name="Config_RTCA0">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+              </Category>
+              <Category Name="Config_STBC">
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_STBC\Config_STBC.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_STBC\Config_STBC.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_STBC\Config_STBC_user.c</Path>
               </Category>
               <Category Name="Config_TAUB0_0">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
               </Category>
               <Category Name="Config_TAUB0_1">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
               </Category>
               <Category Name="Config_UART0">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_UART0\Config_UART0.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_UART0\Config_UART0.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_UART0\Config_UART0.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_UART0\Config_UART0.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
               </Category>
               <Category Name="general">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_cgc.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_cgc.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_cgc_user.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_intvector.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_macrodriver.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_main.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_port.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_riic.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_rtc.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_systeminit.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_taub.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_uart.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_userdefine.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_smc_entry.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_smc_interrupt.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_smc_interrupt.h</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\general\r_smc_intprg.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_cgc.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_cgc.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_cgc_user.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_intc.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_intvector.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_macrodriver.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_main.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_port.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_riic.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_rtc.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_stbc.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_systeminit.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_taub.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_uart.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_userdefine.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_smc_entry.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_smc_interrupt.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_smc_interrupt.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\general\r_smc_intprg.c</Path>
               </Category>
               <Category Name="r_pincfg">
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\r_pincfg\Pin.c</Path>
-                <Path>trash\2025-04-25-13-19-57\src\smc_gen\r_pincfg\Pin.h</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\r_pincfg\Pin.c</Path>
+                <Path>trash\2025-04-29-09-56-34\src\smc_gen\r_pincfg\Pin.h</Path>
               </Category>
             </Category>
           </Category>
         </Category>
-        <Category Name="2025-04-25-13-20-24">
+        <Category Name="2025-04-29-09-56-43">
           <Category Name="src">
             <Category Name="smc_gen">
+              <Category Name="Config_INTC">
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_INTC\Config_INTC.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_INTC\Config_INTC.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_INTC\Config_INTC_user.c</Path>
+              </Category>
               <Category Name="Config_PORT">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_PORT\Config_PORT.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_PORT\Config_PORT.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_PORT\Config_PORT.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_PORT\Config_PORT.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
               </Category>
               <Category Name="Config_RIIC0">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
               </Category>
               <Category Name="Config_RTCA0">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+              </Category>
+              <Category Name="Config_STBC">
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_STBC\Config_STBC.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_STBC\Config_STBC.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_STBC\Config_STBC_user.c</Path>
               </Category>
               <Category Name="Config_TAUB0_0">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
               </Category>
               <Category Name="Config_TAUB0_1">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
               </Category>
               <Category Name="Config_UART0">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_UART0\Config_UART0.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_UART0\Config_UART0.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_UART0\Config_UART0.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_UART0\Config_UART0.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
               </Category>
               <Category Name="general">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_cgc.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_cgc.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_cgc_user.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_intvector.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_macrodriver.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_main.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_port.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_riic.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_rtc.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_systeminit.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_taub.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_uart.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_userdefine.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_smc_entry.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_smc_interrupt.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_smc_interrupt.h</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\general\r_smc_intprg.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_cgc.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_cgc.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_cgc_user.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_intc.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_intvector.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_macrodriver.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_main.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_port.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_riic.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_rtc.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_stbc.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_systeminit.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_taub.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_uart.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_userdefine.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_smc_entry.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_smc_interrupt.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_smc_interrupt.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\general\r_smc_intprg.c</Path>
               </Category>
               <Category Name="r_pincfg">
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\r_pincfg\Pin.c</Path>
-                <Path>trash\2025-04-25-13-20-24\src\smc_gen\r_pincfg\Pin.h</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\r_pincfg\Pin.c</Path>
+                <Path>trash\2025-04-29-09-56-43\src\smc_gen\r_pincfg\Pin.h</Path>
+              </Category>
+            </Category>
+          </Category>
+        </Category>
+        <Category Name="2025-04-29-10-10-21">
+          <Category Name="src">
+            <Category Name="smc_gen">
+              <Category Name="Config_INTC">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_INTC\Config_INTC.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_INTC\Config_INTC.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_INTC\Config_INTC_user.c</Path>
+              </Category>
+              <Category Name="Config_PORT">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_PORT\Config_PORT.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_PORT\Config_PORT.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
+              </Category>
+              <Category Name="Config_RIIC0">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
+              </Category>
+              <Category Name="Config_RTCA0">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+              </Category>
+              <Category Name="Config_STBC">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_STBC\Config_STBC.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_STBC\Config_STBC.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_STBC\Config_STBC_user.c</Path>
+              </Category>
+              <Category Name="Config_TAUB0_0">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
+              </Category>
+              <Category Name="Config_TAUB0_1">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
+              </Category>
+              <Category Name="Config_UART0">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_UART0\Config_UART0.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_UART0\Config_UART0.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
+              </Category>
+              <Category Name="general">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_cgc.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_cgc.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_cgc_user.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_intc.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_intvector.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_macrodriver.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_main.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_port.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_riic.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_rtc.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_stbc.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_systeminit.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_taub.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_uart.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_userdefine.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_smc_entry.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_smc_interrupt.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_smc_interrupt.h</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\general\r_smc_intprg.c</Path>
+              </Category>
+              <Category Name="r_pincfg">
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\r_pincfg\Pin.c</Path>
+                <Path>trash\2025-04-29-10-10-21\src\smc_gen\r_pincfg\Pin.h</Path>
+              </Category>
+            </Category>
+          </Category>
+        </Category>
+        <Category Name="2025-04-29-10-11-01">
+          <Category Name="src">
+            <Category Name="smc_gen">
+              <Category Name="Config_INTC">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_INTC\Config_INTC.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_INTC\Config_INTC.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_INTC\Config_INTC_user.c</Path>
+              </Category>
+              <Category Name="Config_PORT">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_PORT\Config_PORT.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_PORT\Config_PORT.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
+              </Category>
+              <Category Name="Config_RIIC0">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_RIIC0\Config_RIIC0.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_RIIC0\Config_RIIC0.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c</Path>
+              </Category>
+              <Category Name="Config_RTCA0">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_RTCA0\Config_RTCA0.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_RTCA0\Config_RTCA0.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c</Path>
+              </Category>
+              <Category Name="Config_STBC">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_STBC\Config_STBC.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_STBC\Config_STBC.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_STBC\Config_STBC_user.c</Path>
+              </Category>
+              <Category Name="Config_TAUB0_0">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c</Path>
+              </Category>
+              <Category Name="Config_TAUB0_1">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c</Path>
+              </Category>
+              <Category Name="Config_UART0">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_UART0\Config_UART0.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_UART0\Config_UART0.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\Config_UART0\Config_UART0_user.c</Path>
+              </Category>
+              <Category Name="general">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_cgc.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_cgc.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_cgc_user.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_intc.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_intvector.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_macrodriver.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_main.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_port.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_riic.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_rtc.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_stbc.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_systeminit.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_taub.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_uart.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_userdefine.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_smc_entry.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_smc_interrupt.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_smc_interrupt.h</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\general\r_smc_intprg.c</Path>
+              </Category>
+              <Category Name="r_pincfg">
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\r_pincfg\Pin.c</Path>
+                <Path>trash\2025-04-29-10-11-01\src\smc_gen\r_pincfg\Pin.h</Path>
               </Category>
             </Category>
           </Category>
@@ -408,17 +593,17 @@
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_RIIC0"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_0"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_1"</Option>
-          <Option>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_UART0"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_RTCA0"</Option>
-          <Option>-I"${ProjDirPath}\src\smc_gen\Config_DMAC00"</Option>
+          <Option>-I"${ProjDirPath}\src\smc_gen\Config_INTC"</Option>
+          <Option>-I"${ProjDirPath}\src\smc_gen\Config_STBC"</Option>
+          <Option>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</Option>
           <Option>-c</Option>
           <Option>-Xobj_path="$(dir $@)"</Option>
           <Option>-g</Option>
           <Option>-gdb_compatible</Option>
           <Option>-lang=c</Option>
           <Option>-Xcharacter_set=utf8</Option>
-          <Option>-Onothing</Option>
         </CompileOptions>
         <AssembleOptions>
           <Option>-Xcpu=g3kh</Option>
@@ -429,10 +614,11 @@
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_RIIC0"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_0"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_1"</Option>
-          <Option>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_UART0"</Option>
           <Option>-I"${ProjDirPath}\src\smc_gen\Config_RTCA0"</Option>
-          <Option>-I"${ProjDirPath}\src\smc_gen\Config_DMAC00"</Option>
+          <Option>-I"${ProjDirPath}\src\smc_gen\Config_INTC"</Option>
+          <Option>-I"${ProjDirPath}\src\smc_gen\Config_STBC"</Option>
+          <Option>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</Option>
           <Option>-c</Option>
           <Option>-Xobj_path="$(dir $@)"</Option>
           <Option>-g</Option>
@@ -466,14 +652,16 @@
           <Path>HardwareDebug\boot.obj</Path>
           <Path>HardwareDebug\cstart.obj</Path>
           <Path>HardwareDebug\UART_Functions.obj</Path>
-          <Path>HardwareDebug\Config_DMAC00.obj</Path>
-          <Path>HardwareDebug\Config_DMAC00_user.obj</Path>
+          <Path>HardwareDebug\Config_INTC.obj</Path>
+          <Path>HardwareDebug\Config_INTC_user.obj</Path>
           <Path>HardwareDebug\Config_PORT.obj</Path>
           <Path>HardwareDebug\Config_PORT_user.obj</Path>
           <Path>HardwareDebug\Config_RIIC0.obj</Path>
           <Path>HardwareDebug\Config_RIIC0_user.obj</Path>
           <Path>HardwareDebug\Config_RTCA0.obj</Path>
           <Path>HardwareDebug\Config_RTCA0_user.obj</Path>
+          <Path>HardwareDebug\Config_STBC.obj</Path>
+          <Path>HardwareDebug\Config_STBC_user.obj</Path>
           <Path>HardwareDebug\Config_TAUB0_0.obj</Path>
           <Path>HardwareDebug\Config_TAUB0_0_user.obj</Path>
           <Path>HardwareDebug\Config_TAUB0_1.obj</Path>
@@ -492,112 +680,126 @@
           <Path>HardwareDebug\state_machine.obj</Path>
           <Path>HardwareDebug\temperature_reading.obj</Path>
         </LinkOrder>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_PORT\Config_PORT.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_UART0\Config_UART0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_cgc.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_cgc_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_intvector.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_main.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\general\r_cg_systeminit.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\general\r_smc_interrupt.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\general\r_smc_intprg.c"/>
-        <NoTargetFile Target="trash\2025-04-25-12-54-32\src\smc_gen\r_pincfg\Pin.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_PORT\Config_PORT.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_UART0\Config_UART0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_cgc.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_cgc_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_intvector.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_main.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\general\r_cg_systeminit.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\general\r_smc_interrupt.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\general\r_smc_intprg.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-19-57\src\smc_gen\r_pincfg\Pin.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_PORT\Config_PORT.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_UART0\Config_UART0.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_cgc.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_cgc_user.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_intvector.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_main.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\general\r_cg_systeminit.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\general\r_smc_interrupt.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\general\r_smc_intprg.c"/>
-        <NoTargetFile Target="trash\2025-04-25-13-20-24\src\smc_gen\r_pincfg\Pin.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_DMAC00\Config_DMAC00.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_DMAC00\Config_DMAC00_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_PORT\Config_PORT.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_UART0\Config_UART0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_cg_cgc.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_cg_cgc_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_cg_dma_common.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_cg_intvector.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_cg_main.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_cg_systeminit.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_smc_interrupt.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\general\r_smc_intprg.c"/>
-        <NoTargetFile Target="trash\2025-04-28-10-44-37\src\smc_gen\r_pincfg\Pin.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_DMAC00\Config_DMAC00.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_DMAC00\Config_DMAC00_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_PORT\Config_PORT.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_UART0\Config_UART0.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_cg_cgc.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_cg_cgc_user.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_cg_dma_common.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_cg_intvector.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_cg_main.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_cg_systeminit.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_smc_interrupt.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\general\r_smc_intprg.c"/>
-        <NoTargetFile Target="trash\2025-04-28-11-02-58\src\smc_gen\r_pincfg\Pin.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_INTC\Config_INTC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_INTC\Config_INTC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_PORT\Config_PORT.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_STBC\Config_STBC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_STBC\Config_STBC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_UART0\Config_UART0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_cgc.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_cgc_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_intvector.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_main.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\general\r_cg_systeminit.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\general\r_smc_interrupt.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\general\r_smc_intprg.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-54-11\src\smc_gen\r_pincfg\Pin.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_INTC\Config_INTC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_INTC\Config_INTC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_PORT\Config_PORT.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_STBC\Config_STBC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_STBC\Config_STBC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_UART0\Config_UART0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_cgc.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_cgc_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_intvector.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_main.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\general\r_cg_systeminit.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\general\r_smc_interrupt.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\general\r_smc_intprg.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-34\src\smc_gen\r_pincfg\Pin.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_INTC\Config_INTC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_INTC\Config_INTC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_PORT\Config_PORT.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_STBC\Config_STBC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_STBC\Config_STBC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_UART0\Config_UART0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_cgc.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_cgc_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_intvector.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_main.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\general\r_cg_systeminit.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\general\r_smc_interrupt.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\general\r_smc_intprg.c"/>
+        <NoTargetFile Target="trash\2025-04-29-09-56-43\src\smc_gen\r_pincfg\Pin.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_INTC\Config_INTC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_INTC\Config_INTC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_PORT\Config_PORT.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_STBC\Config_STBC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_STBC\Config_STBC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_UART0\Config_UART0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_cgc.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_cgc_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_intvector.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_main.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\general\r_cg_systeminit.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\general\r_smc_interrupt.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\general\r_smc_intprg.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-10-21\src\smc_gen\r_pincfg\Pin.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_INTC\Config_INTC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_INTC\Config_INTC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_PORT\Config_PORT.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_PORT\Config_PORT_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_RIIC0\Config_RIIC0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_RIIC0\Config_RIIC0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_RTCA0\Config_RTCA0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_RTCA0\Config_RTCA0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_STBC\Config_STBC.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_STBC\Config_STBC_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_0\Config_TAUB0_0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_TAUB0_1\Config_TAUB0_1_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_UART0\Config_UART0.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\Config_UART0\Config_UART0_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_cgc.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_cgc_user.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_intvector.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_main.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\general\r_cg_systeminit.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\general\r_smc_interrupt.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\general\r_smc_intprg.c"/>
+        <NoTargetFile Target="trash\2025-04-29-10-11-01\src\smc_gen\r_pincfg\Pin.c"/>
         <CommonOptions>
           <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\general"</IncludePathForC>
           <IncludePathForC>-I"${ProjDirPath}\src\smc_gen"</IncludePathForC>
@@ -606,10 +808,11 @@
           <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_RIIC0"</IncludePathForC>
           <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_0"</IncludePathForC>
           <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_1"</IncludePathForC>
-          <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</IncludePathForC>
           <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_UART0"</IncludePathForC>
           <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_RTCA0"</IncludePathForC>
-          <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_DMAC00"</IncludePathForC>
+          <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_INTC"</IncludePathForC>
+          <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_STBC"</IncludePathForC>
+          <IncludePathForC>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</IncludePathForC>
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\general"</IncludePathForAsm>
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen"</IncludePathForAsm>
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\r_pincfg"</IncludePathForAsm>
@@ -617,10 +820,11 @@
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_RIIC0"</IncludePathForAsm>
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_0"</IncludePathForAsm>
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_TAUB0_1"</IncludePathForAsm>
-          <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</IncludePathForAsm>
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_UART0"</IncludePathForAsm>
           <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_RTCA0"</IncludePathForAsm>
-          <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_DMAC00"</IncludePathForAsm>
+          <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_INTC"</IncludePathForAsm>
+          <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_STBC"</IncludePathForAsm>
+          <IncludePathForAsm>-I"${ProjDirPath}\src\smc_gen\Config_PORT"</IncludePathForAsm>
         </CommonOptions>
       </BuildMode>
     </BuildOptions>

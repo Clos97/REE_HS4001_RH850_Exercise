@@ -36,12 +36,14 @@ Includes
 #include "r_cg_userdefine.h"
 #include "Config_RTCA0.h"
 /* Start user code for include. Do not edit comment generated here */
+#include "state_machine.h"
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+extern Event_t g_event;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -56,5 +58,29 @@ void R_Config_RTCA0_Create_UserInit(void)
     /* End user code. Do not edit comment generated here */
 }
 
+/***********************************************************************************************************************
+* Function Name: r_Config_RTCA0_interrupt_alarm
+* Description  : This function process of INTRTCA0AL interrupt.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+#pragma interrupt r_Config_RTCA0_interrupt_alarm(enable=false, channel=210, fpu=true, callt=false)
+void r_Config_RTCA0_interrupt_alarm(void)
+{
+    /* Start user code for r_Config_RTCA0_interrupt_alarm. Do not edit comment generated here */
+	g_event = EVT_RTC_ALARM;
+    /* End user code. Do not edit comment generated here */
+}
+
 /* Start user code for adding. Do not edit comment generated here */
+uint8_t bin_to_bcd(uint8_t val)
+{
+    return ((val / 10) << 4) | (val % 10);
+}
+
+uint8_t bcd_to_bin(uint8_t val)
+{
+    return ((val >> 4) * 10) + (val & 0x0F);
+}
+
 /* End user code. Do not edit comment generated here */

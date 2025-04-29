@@ -309,7 +309,7 @@ extern void eiint129(void);
 /* External interrupt; */
 extern void eiint130(void);
 /* External interrupt; */
-extern void eiint131(void);
+extern void r_Config_INTC_intp12_interrupt(void);
 /* CSIH2 communication status interrupt; */
 extern void eiint132(void);
 /* CSIH2 receive status interrupt; */
@@ -467,7 +467,7 @@ extern void eiint208(void);
 /* RTCA0 1-second interval interrupt; */
 extern void eiint209(void);
 /* RTCA0 alarm interrupt; */
-extern void eiint210(void);
+extern void r_Config_RTCA0_interrupt_alarm(void);
 /* RTCA0 fixed interval interrupt; */
 extern void eiint211(void);
 /* ADCA1 error interrupt; */
@@ -1066,7 +1066,7 @@ void * const INT_Vectors[] = {
     /* External interrupt; */
     (void *)eiint130,
     /* External interrupt; */
-    (void *)eiint131,
+    (void *)r_Config_INTC_intp12_interrupt,
     /* CSIH2 communication status interrupt; */
     (void *)eiint132,
     /* CSIH2 receive status interrupt; */
@@ -1224,7 +1224,7 @@ void * const INT_Vectors[] = {
     /* RTCA0 1-second interval interrupt; */
     (void *)eiint209,
     /* RTCA0 alarm interrupt; */
-    (void *)eiint210,
+    (void *)r_Config_RTCA0_interrupt_alarm,
     /* RTCA0 fixed interval interrupt; */
     (void *)eiint211,
     /* ADCA1 error interrupt; */
