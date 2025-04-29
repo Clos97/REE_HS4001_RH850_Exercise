@@ -204,12 +204,9 @@ static void State_Init(void) {
     // Enable RTC
     R_Config_RTCA0_Start();
 
-    g_rtc_value.day 	= 	15;
-    g_rtc_value.month 	= 	4;
-    g_rtc_value.year 	=	2025;
-    g_rtc_value.hour	=	13;
-    g_rtc_value.min		=	17;
-    g_rtc_value.sec		=	0;
+    g_rtc_value.hour	=	bin_to_bcd(13);
+    g_rtc_value.min		=	bin_to_bcd(17);
+    g_rtc_value.sec		=	bin_to_bcd(0);
 
     R_Config_RTCA0_Set_CounterValue(g_rtc_value);
 
@@ -262,7 +259,7 @@ static void State_ReadSensor(void) {
     // get timestamp
     R_Config_RTCA0_Get_CounterBufferValue(&g_rtc_value);
 
-    sprintf(g_temp_measurement.timestamp, "%02d:%02d:%02d", g_rtc_value.hour, g_rtc_value.min, g_rtc_value.sec);
+    sprintf(g_temp_measurement.timestamp, "%02d:%02d:%02d", bcd_to_bin(g_rtc_value.hour), bcd_to_bin(g_rtc_value.min), bcd_to_bin(g_rtc_value.sec));
 
     g_event = (g_event == EVT_NONE)?EVT_SENSOR_READ_SUCCESS:g_event; // Only assign if meanwhile a error or button press didn't occure
 }
@@ -281,7 +278,6 @@ static void State_UartLog(void) {
  * @brief Logic for the SLEEP state.
  */
 static void State_Sleep(void) {
-
 		// Stop the interval Timer
 		//R_Config_TAUB0_0_Stop(); -> Should be turned off anyways
 
@@ -294,21 +290,40 @@ static void State_Sleep(void) {
 		R_Config_RTCA0_Get_CounterBufferValue(&g_rtc_value);
 		R_Config_RTCA0_Get_AlarmValue(&g_alarmValue);
 
-		// Add 1m to the Value
-		if(g_rtc_value.min == 0x59)
+		// Add 1 minute to the BCD time
+		if (g_rtc_value.min == 0x59)
 		{
-			g_alarmValue.alarmwh = bin_to_bcd(g_rtc_value.hour + 1);
-			g_alarmValue.alarmwm = 0x00;
+		    // Reset minutes to 00 and increment hour (with BCD correction)
+		    g_alarmValue.alarmwm = 0x00;
+
+		    if ((g_rtc_value.hour & 0x0F) < 9) {
+		        g_alarmValue.alarmwh = g_rtc_value.hour + 0x01;
+		    } else {
+		        g_alarmValue.alarmwh = (g_rtc_value.hour & 0xF0) + 0x10;
+		    }
+
+		    // Optional: handle overflow from 0x23 → 0x00 if nötig
+		    if (g_alarmValue.alarmwh == 0x24) {
+		        g_alarmValue.alarmwh = 0x00;
+		    }
 		}
 		else
 		{
-			g_alarmValue.alarmwh = bin_to_bcd(g_rtc_value.hour);
-			g_alarmValue.alarmwm = bin_to_bcd(g_rtc_value.min + 0x01);
+		    // BCD Minute Addition (inline)
+		    if ((g_rtc_value.min & 0x0F) < 9) {
+		        g_alarmValue.alarmwm = g_rtc_value.min + 0x01;
+		    } else {
+		        g_alarmValue.alarmwm = (g_rtc_value.min & 0xF0) + 0x10;
+		    }
+
+		    g_alarmValue.alarmwh = g_rtc_value.hour;
 		}
 
-		g_alarmValue.alarmww = 0x00; // No Weekday specified
+
+		//g_alarmValue.alarmww = 0x7f; // No Weekday specified
 		// Set the new alarm Value -> TODO: Alarm Not Working yet
 		R_Config_RTCA0_Set_AlarmValue(g_alarmValue);
+
 
 		R_Config_RTCA0_Set_AlarmOn();
 

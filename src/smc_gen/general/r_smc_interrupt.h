@@ -214,7 +214,7 @@ Macro definitions
 #define INTC_PORT_INTP14_PRIORITY                              _INT_PRIORITY_15
 #define INTC_PORT_INTP15_PRIORITY                              _INT_PRIORITY_15
 #define INTC_RTCA0_INTRTCA01S_PRIORITY                         _INT_PRIORITY_15
-#define INTC_RTCA0_INTRTCA0AL_PRIORITY                         _INT_PRIORITY_15
+#define INTC_RTCA0_INTRTCA0AL_PRIORITY                         _INT_PRIORITY_1
 #define INTC_RTCA0_INTRTCA0R_PRIORITY                          _INT_PRIORITY_15
 #define INTC_ADCA1_INTADCA1ERR_PRIORITY                        _INT_PRIORITY_15
 #define INTC_ADCA1_INTADCA1I0_PRIORITY                         _INT_PRIORITY_15

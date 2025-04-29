@@ -58,6 +58,20 @@ void R_Config_RTCA0_Create_UserInit(void)
     /* End user code. Do not edit comment generated here */
 }
 
+/***********************************************************************************************************************
+* Function Name: r_Config_RTCA0_interrupt_alarm
+* Description  : This function process of INTRTCA0AL interrupt.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+#pragma interrupt r_Config_RTCA0_interrupt_alarm(enable=false, channel=210, fpu=true, callt=false)
+void r_Config_RTCA0_interrupt_alarm(void)
+{
+    /* Start user code for r_Config_RTCA0_interrupt_alarm. Do not edit comment generated here */
+	g_event = EVT_RTC_ALARM;
+    /* End user code. Do not edit comment generated here */
+}
+
 /* Start user code for adding. Do not edit comment generated here */
 uint8_t bin_to_bcd(uint8_t val)
 {
