@@ -38,6 +38,8 @@ Includes
 #include "Config_STBC.h"
 #include "Config_INTC.h"
 #include "Config_PORT.h"
+#include "Config_DMAC00.h"
+#include "r_cg_dma_common.h"
 #include "r_cg_cgc.h"
 
 #ifndef SMC_ENTRY_H

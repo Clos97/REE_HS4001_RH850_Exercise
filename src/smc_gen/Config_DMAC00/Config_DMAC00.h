@@ -39,8 +39,8 @@ Macro definitions (Register bit)
 /***********************************************************************************************************************
 Macro definitions
 ***********************************************************************************************************************/
-#define _DMAC00_SOURCE_ADDRESS                (0x00000123UL)
-#define _DMAC00_DESTINATION_ADDRESS           (0x00000456UL)
+#define _DMAC00_SOURCE_ADDRESS                (0x00000000UL)
+#define _DMAC00_DESTINATION_ADDRESS           (0x00000000UL)
 #define _DMAC00_TRANSFER_COUNT                (0x00000004UL)
 
 /***********************************************************************************************************************
@@ -58,5 +58,8 @@ void R_Config_DMAC00_Suspend(void);
 void R_Config_DMAC00_Resume(void);
 void R_Config_DMAC00_Create_UserInit(void);
 /* Start user code for function. Do not edit comment generated here */
+#define START_OF_RAM		0xFEBE0000
+#define END_OF_RAM			0xFEBF7FFF 	// Retention RAM from FEBF:8000-FEBF:FFFF
+#define DMA_SRC_ADDRESS		0xFEF01004 // This address is the source address
 /* End user code. Do not edit comment generated here */
 #endif

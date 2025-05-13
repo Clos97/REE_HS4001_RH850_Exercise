@@ -27,6 +27,7 @@
 Pragma directive
 ***********************************************************************************************************************/
 /* Start user code for pragma. Do not edit comment generated here */
+
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -36,6 +37,8 @@ Includes
 #include "r_cg_userdefine.h"
 #include "Config_RIIC0.h"
 /* Start user code for include. Do not edit comment generated here */
+#include "r_cg_port.h"
+
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

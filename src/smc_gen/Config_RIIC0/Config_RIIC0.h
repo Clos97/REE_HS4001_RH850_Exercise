@@ -59,5 +59,6 @@ void R_Config_RIIC0_StartCondition(void);
 void R_Config_RIIC0_StopCondition(void);
 void R_Config_RIIC0_Create_UserInit(void);
 /* Start user code for function. Do not edit comment generated here */
+MD_STATUS R_Config_RIIC0_Master_Receive_custom(uint16_t adr);
 /* End user code. Do not edit comment generated here */
 #endif

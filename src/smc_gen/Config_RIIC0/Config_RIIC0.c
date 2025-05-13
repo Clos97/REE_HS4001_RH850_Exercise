@@ -98,7 +98,7 @@ void R_Config_RIIC0_Create(void)
     RIIC0.BRL.UINT32 = _RIIC_RIICBRL_DEFAULT_VALUE | _RIIC0_BITRATE_LOW_LEVEL_PERIOD;
     RIIC0.BRH.UINT32 = _RIIC_RIICBRH_DEFAULT_VALUE | _RIIC0_BITRATE_HIGH_LEVEL_PERIOD;
     RIIC0.FER.UINT32 = _RIIC_SCL_SYNC_CIRCUIT_USED | _RIIC_NOISE_FILTER_UNUSED | _RIIC_TRANSFER_SUSPENSION_ENABLED | 
-                       _RIIC_NACK_ARBITRATION_DISABLE | _RIIC_MASTER_ARBITRATION_ENABLE | 
+                       _RIIC_NACK_ARBITRATION_ENABLE | _RIIC_MASTER_ARBITRATION_ENABLE | 
                        _RIIC_TIMEOUT_FUNCTION_DISABLED;
     RIIC0.IER.UINT32 = _RIIC_TRANSMIT_DATA_EMPTY_INT_ENABLE | _RIIC_TRANSMIT_END_INT_ENABLE | 
                        _RIIC_RECEIVE_COMPLETE_INT_ENABLE | _RIIC_START_CONDITION_INT_ENABLE | 
@@ -403,4 +403,61 @@ void R_Config_RIIC0_StopCondition(void)
 }
 
 /* Start user code for adding. Do not edit comment generated here */
+MD_STATUS R_Config_RIIC0_Master_Receive_custom(uint16_t adr)
+{
+    MD_STATUS status = MD_OK;
+
+
+        /* Set parameter */
+        //g_riic0_rx_length = rx_num;
+        g_riic0_rx_count = 0U;
+       // gp_riic0_rx_address = rx_buf;
+        g_riic0_slave_address = adr;
+        g_riic0_dummy_read_count = 0U;
+        g_riic0_mode_flag = _RIIC_MASTER_RECEIVE;
+
+
+        if (RIIC0.CR2.UINT32 & _RIIC_BUS_BUSY)
+        {
+            /* Has a stop been issued or detected? */
+            if ((_RIIC_STOP_CONDITION_REQUEST & RIIC0.CR2.UINT32) || (_RIIC_STOP_CONDITION_DETECTED &
+                 RIIC0.SR2.UINT32))
+            {
+
+
+            }
+            /* Bus is busy and it is master mode (MST = 1) */
+            else if (_RIIC_MASTER_MODE & RIIC0.CR2.UINT32)
+            {
+                /* Issue a restart condition */
+                RIIC0.SR2.UINT32 &= (uint32_t) ~_RIIC_START_CONDITION_DETECTED;
+                RIIC0.IER.UINT32 |= _RIIC_START_CONDITION_INT_ENABLE;
+                RIIC0.CR2.UINT32 |= _RIIC_RESTART_CONDITION_REQUEST;
+            }
+            else
+            {
+                /* Another master must have the bus */
+                status = MD_ERROR5;
+            }
+        }
+        else
+        {
+        	/* Issue a start condition */
+			// Disable Transmit and receive interrupt
+			INTC2.ICRIIC0RI.BIT.MKRIIC0RI = _INT_PROCESSING_DISABLED;
+			INTC2.ICRIIC0TI.BIT.MKRIIC0TI = _INT_PROCESSING_DISABLED;
+
+			R_Config_RIIC0_StartCondition();
+
+			// The interrupt is being called here -> Disabled now
+
+			// Write the data register
+			RIIC0.DRT.UINT32 = (uint8_t)(g_riic0_slave_address << _RIIC_ADDRESS_7BIT_SHIFT) + 1; // the write bit is 1
+
+			// Now the data starts flying in
+
+        }
+
+    return (status);
+}
 /* End user code. Do not edit comment generated here */

@@ -55,89 +55,111 @@ volatile Event_t g_event = EVT_NONE;
 // Maybe thes variables are obsolete -> State machine needs to handle this
 MD_STATUS	err;
 extern volatile uint8_t          g_riic0_state;
-uint8_t g_useStateMachine = 0U; // Turn on the state machine -> Off for testing the individual peripherals
+uint8_t g_useStateMachine = 1U; // Turn on the state machine -> Off for testing the individual peripherals
 extern uint8_t uart_isr_status_flag_send_complete;
 TemperatureMeasurement g_temp_measurement;
 rtc_counter_value_t g_rtc_value;
 
 // DMA TESTING AREA TODO: Delete if the code is Working
 uint8_t len;
-#define I2C_RECEIVE_SIZE 4
+#define I2C_RECEIVE_SIZE 	4
+
 volatile uint8_t i2c_receive_buffer[I2C_RECEIVE_SIZE];
 volatile uint8_t i2c_receive_buffer_dma[I2C_RECEIVE_SIZE];
 extern uint8_t i2c_transmit_flag;
 extern uint8_t i2c_receive_flag;
-/* End user code. Do not edit comment generated here */
-void r_main_userinit(void);
+volatile uint32_t *ptr = (uint32_t *)0xFEF01000;
+volatile uint32_t *ptr2 = (uint32_t *)0xFEF01004;
 
 // Test Function
-void testFunction(void)
-{
-	uint32_t cnt_sfty =0;
-	R_Systeminit();
-	EI();
-
-	// Start I2C Peripheral
-	R_Config_RIIC0_Start();
-	// Set the Memory protection (PEG register) b.c. I want to access the local RAM
-	PEG.G0MK.UINT32 = 0xFFFFF000;
-	PEG.G0BA.UINT32 = (0xFEDE8000 & 0xFFFFF000) |
-	                  (1 << 2) |   // Schreibzugriff
-	                  (1 << 1) |   // Lesezugriff
-	                  (1 << 0);    // Bereich aktiv
-
-	// Init DMA
-	PDMA0.DSA0 = (uint32_t) i2c_receive_buffer_dma;
-	PDMA0.DDA0 = (uint32_t) &RIIC0.DRR;
-	PDMA0.DTC0 = 4;//(4 << 16) | 4;
-	/* Address Mode:
-	   - Source Address: Fixed (IICRX immer gleiche Adresse)
-	   - Destination Address: Incremented (Empfangspuffer inkrementieren)
-	*/
-	//PDMA0.DMCRB = 0x00000000; // Default-Einstellung passt meistens
-
-
-	// Start the DMA
-	R_Config_DMAC00_Start();
-
-	i2c_transmit_flag 	= 0;
-	cnt_sfty			= 0;
-
-	R_Config_RIIC0_Master_Send(SENSOR_SLAVE_ADDRESS,"", 0);
-
-	while(i2c_transmit_flag	==	0U)
-	{
-		if(cnt_sfty >= SAVETY_CNT)
-		{
-			return;
-		}
-		cnt_sfty++;
-	}
-
-	cnt_sfty = 0;
-
-	// Delay
-	while(cnt_sfty < DELAY_CNT)
-	{
-		cnt_sfty++;
-	}
-
-	cnt_sfty = 0;
-	// Measure
-	memset(i2c_receive_buffer, 0, sizeof(i2c_receive_buffer));
-	memset(i2c_receive_buffer_dma, 0, sizeof(i2c_receive_buffer_dma));
-
-
-	R_Config_RIIC0_Master_Receive(0x44, i2c_receive_buffer, I2C_RECEIVE_SIZE);
-
-	// Delay
-	while(cnt_sfty < DELAY_CNT)
-	{
-		cnt_sfty++;
-	}
-
-	cnt_sfty = 0;
-}
+//void testFunction(void)
+//{
+//	uint32_t cnt_sfty =0;
+//	R_Systeminit();
+//	EI();
+//
+//	// Start I2C Peripheral
+//	R_Config_RIIC0_Start();
+//
+//	// Init DMA
+//	PDMA0.DCEN0  	= 0x0;	// Channel disable
+//	PDMA0.DDA0 		= 0xFEF01004;//- 0x200000;//(uint32_t) &i2c_receive_buffer_dma - 0x200000; 		// Destination Address (CPU Self area offset)
+//	PDMA0.DSA0 		= (uint32_t) &RIIC0.DRR;//&RIIC0.DRR;					// Source Address
+//
+//	// 1101 1011
+//
+//	PDMA0.DCEN0  	= 0x1;	// Channel Enable
+//	/* Address Mode:
+//	   - Source Address: Fixed (IICRX immer gleiche Adresse)
+//	   - Destination Address: Incremented (Empfangspuffer inkrementieren)
+//	*/
+//	//PDMA0.DMCRB = 0x00000000; // Default-Einstellung passt meistens
+//
+//	// Set the Memory protection (PEG register) b.c. I want to access the local RAM
+//	// Schritt 1: PEG global aktivieren
+//	PEG.SP.UINT32 |= 0x00000001;       // Bit 0:0      Accesses by the external master having SPID is enabled
+//
+//
+//	// Schritt 2: Maske für Region 0 setzen (64 KB)
+//	PEG.G0MK.UINT32 = (END_OF_RAM - START_OF_RAM) & 0xFFFFF000;   // Address Mask
+//
+//	// Schritt 3: Basisadresse und Rechte setzen:
+//	// Bit 0: GnEN  = 1 → Bereich aktiv
+//	// Bit 1: GnRD  = 1 → Lesezugriff erlaubt
+//	// Bit 2: GnWR  = 1 → Schreibzugriff erlaubt
+//	// Bit 4: GnSP0 = 1 → SPID 0 darf zugreifen
+//	// Bits 12–31: Basisadresse (0xFEDE0000 >> 12 = 0xFEDE0)
+//	PEG.G0BA.UINT32 = START_OF_RAM + 0x00000017;    // Bit 12-31:   Address 0xfebc0000
+//													// Bit 5:0      Access by the external master having SPID = 1 is disabled.
+//													// Bit 4:1      Access by the external master having SPID = 0 is enabled.
+//													// Bit 2:1      Write access enabled
+//													// Bit 1:1      Read access enabled
+//													// Bit 0:1      PEG area enabled
+//	// Start the DMA
+//	R_Config_DMAC00_Start();
+//
+//	i2c_transmit_flag 	= 0;
+//	cnt_sfty			= 0;
+//
+//	R_Config_RIIC0_Master_Send(SENSOR_SLAVE_ADDRESS,"", 0);
+//
+//	while(i2c_transmit_flag	==	0U)
+//	{
+//		if(cnt_sfty >= SAVETY_CNT)
+//		{
+//			return;
+//		}
+//		cnt_sfty++;
+//	}
+//
+//	cnt_sfty = 0;
+//
+//	// Delay
+//	while(cnt_sfty < DELAY_CNT)
+//	{
+//		cnt_sfty++;
+//	}
+//
+//	cnt_sfty = 0;
+//	// Measure
+//	memset(i2c_receive_buffer, 0, sizeof(i2c_receive_buffer));
+//	memset(i2c_receive_buffer_dma, 0, sizeof(i2c_receive_buffer_dma));
+//
+//
+//	*ptr = 0x12345678;
+//
+//	R_Config_RIIC0_Master_Receive_custom(0x44);
+//
+//	// Delay
+//	while(cnt_sfty < DELAY_CNT)
+//	{
+//		cnt_sfty++;
+//	}
+//
+//	cnt_sfty = 0;
+//}
+/* End user code. Do not edit comment generated here */
+void r_main_userinit(void);
 
 /***********************************************************************************************************************
 * Function Name: main
@@ -148,12 +170,10 @@ void testFunction(void)
 void main(void)
 {
     r_main_userinit();
-
-    // Here comes the DMA Code just for testing
-    testFunction();
-
-	//============================================================================================
     /* Start user code for main. Do not edit comment generated here */
+    //testFunction();
+
+
 
     if(g_useStateMachine == 1U)
     {

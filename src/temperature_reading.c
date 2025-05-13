@@ -58,17 +58,55 @@ void start_measurement(TemperatureMeasurement *measurement)
 		cnt_sfty++;
 	}
 
-	// Extract the raw data from the message
-	// Check status bit
-	//if((rx_buf[0] &0xC0) == 0x00) // This is not working -> die 0 am Anfang wird nicht erkannt
-	if((rx_buf[0] >> 7) == 0 && (rx_buf[0] >> 6) == 0)
+	// Now take the pointer values and paste them into the rx buffer
+
+}
+
+void start_measurement_with_dma()
+{
+	// Start a new measurement with the request
+	i2c_transmit_flag 	= 0;
+	cnt_sfty			= 0;
+	INTC2.ICRIIC0TI.BIT.MKRIIC0TI = _INT_PROCESSING_ENABLED; // Enable the Transmited interrupt (is disabled in the receive custom function)
+	INTC2.ICRIIC0RI.BIT.MKRIIC0RI = _INT_PROCESSING_ENABLED; // same here
+
+	R_Config_RIIC0_Master_Send(SENSOR_SLAVE_ADDRESS,"", 0);
+
+	while(i2c_transmit_flag	==	0U)
+	{
+		if(cnt_sfty >= SAVETY_CNT)
+		{
+			return;
+		}
+		cnt_sfty++;
+	}
+
+	cnt_sfty = 0;
+
+	// Reset the I2C peripheral
+	R_Config_RIIC0_Stop();
+	// Delay
+	while(cnt_sfty < DELAY_CNT)
+	{
+		cnt_sfty++;
+	}
+	R_Config_RIIC0_Start();
+	cnt_sfty = 0;
+
+	// Get the new measurement values
+	R_Config_RIIC0_Master_Receive_custom(SENSOR_SLAVE_ADDRESS);
+}
+
+void get_measurement_values(TemperatureMeasurement *measurement, uint8_t *buffer)
+{
+	if((buffer[0] >> 7) == 0 && (buffer[0] >> 6) == 0)
 	{
 		// Data is Valid
 		// calc Humidity
-		measurement->relative_humidity_raw = ((rx_buf[0] & 0x3F) << 8) | rx_buf[1];
+		measurement->relative_humidity_raw = ((buffer[0] & 0x3F) << 8) | buffer[1];
 
 		// Calc temp
-		measurement->temperature_raw = (rx_buf[2] << 8) | (rx_buf[3] & 0xFC);
+		measurement->temperature_raw = (buffer[2] << 8) | (buffer[3] & 0xFC);
 		measurement->temperature_raw >>= 2;
 
 		// Indicate that the data is valid
@@ -76,7 +114,6 @@ void start_measurement(TemperatureMeasurement *measurement)
 	}else{
 		measurement->status = TEMP_STATE_DATA_INVALID;
 	}
-
 }
 
 void calc_humidity(TemperatureMeasurement *measurement)

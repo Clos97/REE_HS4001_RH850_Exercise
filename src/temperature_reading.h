@@ -11,7 +11,7 @@
 #include "r_cg_macrodriver.h"
 
 #define SAVETY_CNT					4000000 // With 8 MHz clk -> 2s
-#define DELAY_CNT					200000// delay with 8 MHz CLK
+#define DELAY_CNT					40000// delay with 8 MHz CLK
 #define SENSOR_SLAVE_ADDRESS		0x44 // std address for HS3001
 #define BYTES_CNT_I2C_MESSAGE		4U
 

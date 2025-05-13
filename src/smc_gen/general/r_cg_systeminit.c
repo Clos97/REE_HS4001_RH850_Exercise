@@ -42,6 +42,7 @@ Includes
 #include "Config_STBC.h"
 #include "Config_INTC.h"
 #include "Config_PORT.h"
+#include "Config_DMAC00.h"
 #include "r_cg_cgc.h"
 /* Start user code for include. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
@@ -69,4 +70,5 @@ void R_Systeminit(void)
     R_Config_UART0_Create();
     R_Config_RTCA0_Create();
     R_Config_INTC_Create();
+    R_Config_DMAC00_Create();
 }

@@ -25,25 +25,27 @@ void uart_send_state_transition(State_t old_state, State_t new_state)
 	    case 0x00: char_state_old = "INITIALISATION"; break;
 	    case 0x01: char_state_old = "IDLE"; break;
 	    case 0x02: char_state_old = "READ SENSOR"; break;
-	    case 0x03: char_state_old = "SEND LOG MESSAGE"; break;
-	    case 0x04: char_state_old = "SLEEPING"; break;
-	    case 0x05: char_state_old = "WAKEUP"; break;
-	    case 0x06: char_state_old = "RESET"; break;
-	    case 0x07: char_state_old = "ERROR"; break;
+	    case 0x03: char_state_old = "CALC SENS VALUES"; break;
+	    case 0x04: char_state_old = "SEND LOG MESSAGE"; break;
+	    case 0x05: char_state_old = "SLEEPING"; break;
+	    case 0x06: char_state_old = "WAKEUP"; break;
+	    case 0x07: char_state_old = "RESET"; break;
+	    case 0x08: char_state_old = "ERROR"; break;
 	    default:   char_state_old = "STATE NOT DEFINED"; break;
 	}
 
 	switch(new_state)
 	{
-		case 0x00: char_state_new = "INITIALISATION"; break;
-		case 0x01: char_state_new = "IDLE"; break;
-		case 0x02: char_state_new = "READ SENSOR"; break;
-		case 0x03: char_state_new = "SEND LOG MESSAGE"; break;
-		case 0x04: char_state_new = "SLEEPING"; break;
-		case 0x05: char_state_new = "WAKEUP"; break;
-		case 0x06: char_state_new = "RESET"; break;
-		case 0x07: char_state_new = "ERROR"; break;
-		default:   char_state_new = "STATE NOT DEFINED"; break;
+			case 0x00: char_state_new = "INITIALISATION"; break;
+		    case 0x01: char_state_new = "IDLE"; break;
+		    case 0x02: char_state_new = "READ SENSOR"; break;
+		    case 0x03: char_state_new = "CALC SENS VALUES"; break;
+		    case 0x04: char_state_new = "SEND LOG MESSAGE"; break;
+		    case 0x05: char_state_new = "SLEEPING"; break;
+		    case 0x06: char_state_new = "WAKEUP"; break;
+		    case 0x07: char_state_new = "RESET"; break;
+		    case 0x08: char_state_new = "ERROR"; break;
+		    default:   char_state_new = "STATE NOT DEFINED"; break;
 	}
 
 
